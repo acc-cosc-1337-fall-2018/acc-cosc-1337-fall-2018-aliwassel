@@ -34,7 +34,7 @@ TEST_CASE("Test pass by val by value and reference", " ")
 	
 	pass_by_val_by_ref(num1, num2);
 	
-	REQUIRE(num==0);
+	REQUIRE(num1==0);
 	REQUIRE(num2==99);
 }
 
