@@ -7,8 +7,8 @@ TEST_CASE("Test sum_numbers", "[1,5,10]") {
 	REQUIRE(sum_numbers(2, 3) == 5);
 	REQUIRE(sum_numbers(5, 5) == 10);
 	REQUIRE(sum_numbers(2, 2) == 4);
-	REQUIRE(sum_numbers(5, 5) == 25);
-	REQUIRE(sum_numbers(10, 10) == 100);
+	REQUIRE(sum_numbers(5, 5) == 10);
+	REQUIRE(sum_numbers(10, 10) == 20);
 }
 	
 	
