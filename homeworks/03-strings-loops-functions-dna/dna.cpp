@@ -1,14 +1,54 @@
 #include<math.h>
 #include "dna.h"
+#include<iostream>
 
-int get_point_mutations(std::string dna1, std::string dna2)
-{	//write the function code 
+
+int get_point_mutations(std::string dna1, std::string dna2) 
+{
+	int result;
+	string sizeof_dna1 = dna1;
+	string sizeof_dna2 = dna2;
+	result = sizeof_dna1.size() - sizeof_dna2.size();
+	return result;
+
 	
-	return 0;
 }
 
 
+
+
+
 //write function code for std::string get_dna_complement(std::string dna)
+
+std::string get_dna_complement(std::string dna) 
+{
+	dna = "AAAACCCGGT";
+
+	std::string dna_not_reverse = dna;
+	std::string dna_reverse = "";
+	std::string result;
+	for (unsigned int i = dna_not_reverse.length() - 1; i != -1; --i)
+	{
+		dna_reverse += dna_not_reverse[i];
+
+
+
+		result.replace(9, 1, "A");
+		result.replace(8, 1, "C");
+		result.replace(7, 1, "C");
+		result.replace(6, 1, "G");
+		result.replace(5, 1, "G");
+		result.replace(4, 1, "G");
+		result.replace(3, 1, "T");
+		result.replace(2, 1, "T");
+		result.replace(1, 1, "T");
+		result.replace(7, 1, "C");
+		std::cout << result;
+	}
+
+	
+	return 0;
+}
 
 
 

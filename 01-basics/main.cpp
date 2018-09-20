@@ -1,11 +1,16 @@
 ﻿#include<iostream>
-#include "basics.h"
-
+#include<string>
+#include<vector>
+using namespace std;
 using std::cout;
 
 int main()
 {
-	cout << sum_numbers(5, 5);
+	std::string value = "AAAACCCGGT";
+	std::string result;
+	value.replace(1, 1, "X");
+
+	std::cout << value << endl;
 
 	return 0;
 }

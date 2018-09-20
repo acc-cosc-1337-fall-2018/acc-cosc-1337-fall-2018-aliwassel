@@ -1,4 +1,8 @@
 #include<iostream>
+// include string.
+#include<string>
+using namespace std;
+
 //DO NOT WRITE FUNCTION CODE HERE; USE dna.cpp for function implementation
 
 
@@ -44,26 +48,41 @@ std::string get_dna_complement(std::string dna);
 /**
 Given a dna string returns the rna of the string.
 
-An RNA string is a string formed from the alphabet containing "A", "C", 
-"G", and "U".  Given a DNA string t corresponding to a coding strand, its 
+An RNA string is a string formed from the alphabet containing "A", "C",
+"G", and "U".  Given a DNA string t corresponding to a coding strand, its
 transcribed RNA string u is formed by replacing all occurrences of "T" in
 t with "U" in u.
 
-IMPORTANT!!: 
+IMPORTANT!!:
 DEFINE FUNCTION PROTOTYPE BELOW AND
-ADD PARAMETER(@param) AND RETURN(@return) COMMENTS 
+ADD PARAMETER(@param) AND RETURN(@return) COMMENTS
 (see my example above)
 */
 
 //define function prototype for transcribe_dna_into_rna with one string parameter
-//that returns a string
+//that returns a string  
 
 
 
+/*@param dna_to_rna_string
+
+Parameter dna_st: GAGCCTAACGGGAT
+
+@ retrun the rna string*/
 
 
-/**
-Given a dna string returns the gc content of dna.
+
+//Sample Dataset(s parameter)
+//Parameter dna_string1 : GAGCCTACTAACGGGAT
+//value=GAGCCUAACGGGAU
+//Sample Output(function return value).
+
+
+std::string transcribe_dna_into_rna(std::string dna_st);
+
+
+
+/*Given a dna string returns the gc content of dna.
 
 The GC-content of a DNA string is given by the percentage of symbols in the string 
 that are "C" or "G". For example, the GC-content of "AGCTATAG" is 37.5%. Note that 
@@ -73,10 +92,17 @@ IMPORTANT!!:
 DEFINE FUNCTION PROTOTYPE BELOW AND
 ADD PARAMETER(@param) AND RETURN(@return) COMMENTS
 (see my example above)
-*/
+**/
 
 //define function prototype for get_gc_content with a string parameter that returns
 //a double
+// @param  dna. it is a dna string. 
+//dna=GAGCCTACTAACGGGAT
+//return a double 
+//gc_dna= 
+
+
+
 double get_gc_content(std::string dna);
 
 
