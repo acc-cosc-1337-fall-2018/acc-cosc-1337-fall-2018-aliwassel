@@ -25,15 +25,23 @@ AAAACCCGGT result should be ACCGGGTTTT
 CCCGGAAAAT result should be ATTTTCCGGG
 */
 
+TEST_CASE("get_dna_complement", "dna") {
 
-
-
+	REQUIRE(get_dna_complement("AAAACCCGGT", "ACCGGGTTTT") == 7);
+}
+	
 /*
 Create a test case for transrcribe_dna_into_rna with arguments:
 GATGGAACTTGACTACGTAAATT result should be GAUGGAACUUGACUACGUAAAUU
 AAATTGATCTTGACTACGTGGAA result should be AAAUUGAUCUUGACUACGUGGAA
 
 */
+	TEST_CASE("transcribe_dna_into_rna", "Dna_string ") {
+
+	REQUIRE(transcribe_dna_into_rna("GATGGAACTTGACTACGTAAATT", "GAUGGAACUUGACUACGUAAAUU") == 0);
+	
+}
+	
 
 
 

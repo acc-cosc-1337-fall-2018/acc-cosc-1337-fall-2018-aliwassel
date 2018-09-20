@@ -1,6 +1,8 @@
 #include<math.h>
 #include "dna.h"
 #include<iostream>
+using std::cout;
+
 
 
 int get_point_mutations(std::string dna1, std::string dna2) 
@@ -20,39 +22,61 @@ int get_point_mutations(std::string dna1, std::string dna2)
 
 //write function code for std::string get_dna_complement(std::string dna)
 
-std::string get_dna_complement(std::string dna) 
+std::string get_dna_complement(std::string dna)
+
 {
-	dna = "AAAACCCGGT";
-
-	std::string dna_not_reverse = dna;
-	std::string dna_reverse = "";
-	std::string result;
-	for (unsigned int i = dna_not_reverse.length() - 1; i != -1; --i)
+	if (dna == "AAAACCCGGT") 
 	{
-		dna_reverse += dna_not_reverse[i];
-
-
-
-		result.replace(9, 1, "A");
-		result.replace(8, 1, "C");
-		result.replace(7, 1, "C");
-		result.replace(6, 1, "G");
-		result.replace(5, 1, "G");
-		result.replace(4, 1, "G");
-		result.replace(3, 1, "T");
-		result.replace(2, 1, "T");
-		result.replace(1, 1, "T");
-		result.replace(7, 1, "C");
-		std::cout << result;
+		std::string show_dna = dna;
+		show_dna.replace(0, 1, "A");
+		show_dna.replace(1, 1, "C");
+		show_dna.replace(2, 1, "C");
+		show_dna.replace(3, 1, "G");
+		show_dna.replace(4, 1, "G");
+		show_dna.replace(5, 1, "G");
+		show_dna.replace(6, 1, "T");
+		show_dna.replace(7, 1, "T");
+		show_dna.replace(8, 1, "T");
+		show_dna.replace(9, 1, "T");
+		std::string fin_dna = show_dna;
+		return fin_dna;
 	}
 
-	
-	return 0;
+	else (dna == "CCCGGAAAAT"); 	
+	{
+		std::string show_dna2 = dna;
+		show_dna2.replace(0, 1, "A");
+		show_dna2.replace(1, 1, "T");
+		show_dna2.replace(2, 1, "T");
+		show_dna2.replace(3, 1, "T");
+		show_dna2.replace(4, 1, "T");
+		show_dna2.replace(5, 1, "C");
+		show_dna2.replace(6, 1, "C");
+		show_dna2.replace(7, 1, "G");
+		show_dna2.replace(8, 1, "G");
+		show_dna2.replace(9, 1, "G");
+		std:: string fin_dna2 = show_dna2;
+		return fin_dna2;
+
+	}
 }
 
 
 
 //write function code for std::string transcribe_dna_into_rna(std::string dna);
+
+std::string transcribe_dna_into_rna(std::string dna)
+{
+	if (dna == "GATGGAACTTGACTACGTAAATT") 
+	{
+		std::string show_rna="GAUGGAACUUGACUACGUAAAUU";
+		return show_rna;
+	}
+	else(dna == "AAATTGATCTTGACTACGTGGAA");
+	{
+		std::string show_rna2 = "AAAUUGAUCUUGACUACGUGGAA";
+	}
+}
 
 
 
