@@ -25,7 +25,7 @@ AAAACCCGGT result should be ACCGGGTTTT
 CCCGGAAAAT result should be ATTTTCCGGG
 */
 
-TEST_CASE("get_dna_complement", "dna") {
+TEST_CASE("get_dna_complement") {
 
 	REQUIRE(get_dna_complement("AAAACCCGGT", "ACCGGGTTTT") == 7);
 }
