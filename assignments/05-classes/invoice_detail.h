@@ -3,7 +3,7 @@
 
 class InvoiceDetail {
 public:
-	InvoiceDetail(double c, int u) {}
+	InvoiceDetail(double c, int u): cost(c), unit(u) {}
 	double get_extended_cost();
 private:
 	double cost;
