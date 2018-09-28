@@ -1,9 +1,10 @@
 #include"invoice_detail.h"
+#include<iostream>
+
 int main() 
 {
 	InvoiceDetail detail(10, 10);
-	detail.get_extended_cost();
-
+	std::cout<<detail.get_extended_cost();
 
 	return 0;
 }
