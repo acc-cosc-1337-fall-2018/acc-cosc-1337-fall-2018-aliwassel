@@ -1,10 +1,12 @@
-#include "invoice_detail.h"
+/*nclude "invoice_detail.h"
 
 
 
-double  invoice _detail::get_extended_cost() 
+double  InvoiceDetail::get_extended_cost()
 {
 	return  cost * unit;
 }
+  */
+
 
 		
