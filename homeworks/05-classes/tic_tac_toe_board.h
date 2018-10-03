@@ -1,5 +1,5 @@
-#ifndef TIC_TAC_TOE_H
-#define TIC_TAC_TOE_H
+#ifndef TIC_TAC_TOE_BOARD_H
+#define TIC_TAC_TOE_BOARD_H
 #include<iostream>
 #include<string>
 #include<vector>
@@ -20,13 +20,13 @@ private:
 	bool check_row_win();
 	bool check_diagonal_win();
 	void clear_board();
-	void check_board)_full();
+	void check_board_full();
 	vector<vector <string>>pegs;
 
 	string next_player;
 
 
-	vector<vector<int>>pegs(9, "");
+	vector <string> pegs = {"","","","","","","","",""}
 };
 
 #endif // TIC_TAC_TOE_H
