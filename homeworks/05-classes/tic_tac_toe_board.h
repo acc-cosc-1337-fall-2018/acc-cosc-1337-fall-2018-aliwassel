@@ -8,7 +8,7 @@ class TicTacToeBoard
 {
 public:
 
-	bool game_over;
+	bool game_over();
 	void start_game(string player);
 	void mark_board(int position);
 	string get_player();
@@ -20,7 +20,7 @@ private:
 	bool check_row_win();
 	bool check_diagonal_win();
 	void clear_board();
-	void check_board_full();
+	bool check_board_full();
 	vector<vector <string>>pegs;
 
 	string next_player;
