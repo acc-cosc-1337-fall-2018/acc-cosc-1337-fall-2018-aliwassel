@@ -15,6 +15,7 @@ int main()
 	{
 		cout << "welcom please enter X or O" << endl;
 		cin >> player;
+		cout << "now enter a position";
 		cin>> position;
 		obj1.start_game(player);
 		obj1.mark_board(position);

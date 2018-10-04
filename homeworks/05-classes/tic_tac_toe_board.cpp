@@ -2,15 +2,9 @@
 
 void TicTacToeBoard::start_game(string player) 
 {
-	for (auto p : player) {
-		if (player == "X" || p == "O")
-		{
-			next_player = player;
-		}
-			
-		
-		clear_board();
-	}
+	next_player = player;
+	clear_board();
+	
 }
 
 void TicTacToeBoard::mark_board(int position) 
