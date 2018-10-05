@@ -9,6 +9,7 @@ int main() {
 	{
 		
 		string play;
+		int play_again;
 		int position = 0;
 
 		cout << "welcom. please press y if you want to play tic tac." <<endl;
@@ -25,8 +26,11 @@ int main() {
 			else
 				cout << "Invalide entry try again: " << endl;
 		}
-		
-
+		while (play_again) 
+		{
+			cout << "please enter 1 if you want to continue" << endl;
+			cin >> play_again;
+		}
 		
 
 	} while (play_tictac.game_over() == false);

@@ -1,17 +1,24 @@
 #include<math.h>
 #include "dna.h"
 #include<iostream>
-using std::cout;
+using namespace std;
 
 
 
 int get_point_mutations(std::string dna1, std::string dna2)
 {
-	int result;
-	string sizeof_dna1 = dna1;
-	string sizeof_dna2 = dna2;
-	result = sizeof_dna1.size() - sizeof_dna2.size();
-	return result;
+	int point_mut;
+	if (dna1.size() != dna2.size())
+		return -1;
+	else 
+		for (int i = 0; i < dna1.size(); i++) 
+		{
+			if (dna1[i] != dna2[i]) 
+			{
+				++point_mut;
+			}
+		}return point_mut;
+
 
 
 }
@@ -21,19 +28,44 @@ int get_point_mutations(std::string dna1, std::string dna2)
 
 
 //write function code for std::string get_dna_complement(std::string dna)
+// reverse_dna.
+
 
 std::string get_dna_complement(std::string dna)
 
 {
 	string reverse_dna = "";
-	for (unsigned i = dna.length() - 1; i != -1; --i) 
+	// call the size()-1 function
+	dna_length = dna.size() - 1;
+	//loop over dna and reverse it.
+	for (int i = dna_length; i > 0; --i)
+		reverse_dna.push_back(dna[i]);
+	//loop over reverse dna and change each
+	// corresponding letters.
+
+	for (int i = 0; i < reverse_dna.size(); ++i)
 	{
-		reverse_dna += dna[i];
+		switch (reverse_dna[i])
+		{
+		case 'A':
+			reverse_dna[i] = 'T';
+			break;
+		case 'T':
+			reverse_dna[i] = 'A';
+			break;
+		case 'C':
+			reverse_dna[i] = 'G';
+			break;
+		case 'G':
+			reverse_dna[i] = 'C';
+			break;
+		}
 
 	}
-	cout << reverse_dna;
-	
+	return reverse_dna;
 }
+
+			
 
 
 
@@ -41,15 +73,26 @@ std::string get_dna_complement(std::string dna)
 
 std::string transcribe_dna_into_rna(std::string dna)
 {
-	if (dna == "GATGGAACTTGACTACGTAAATT")
+	// holds value of dna and changes T to U.
+	string show_rna;
+	// loop over dna and if dna[i]==T changed it to U
+	for (int i; i < dna.size(); i++)
 	{
-		std::string show_rna = "GAUGGAACUUGACUACGUAAAUU";
-		return show_rna;
+		if (dna[i] == 'T')
+		{
+			show_rna.push_back('U');
+
+		}
+		else if (dna[i]=='U')
+		{
+			show_rna.push_back('T');
+			
+		}
+		else
+			show_rna.push_back(dna[i]);
+
 	}
-	else(dna == "AAATTGATCTTGACTACGTGGAA");
-	{
-		std::string show_rna2 = "AAAUUGAUCUUGACUACGUGGAA";
-	}
+	return show_rna;
 }
 
 
@@ -63,14 +106,12 @@ double get_gc_content(std::string dna)
 	//auto determines data type in this case s is a char data type
 	for (auto s : dna)
 	{
-		if (s == 'U') 
+		if (s == 'C') || (s = 'G')
 		{
-			s = 'T';
+			//accumulate GC
+			gc_count = gc_count+1;
 
 		}
-		
-		dna[s];
-		
 	
 			//in C++ logical and is && and logical or is ||
 		//usage (and) condition1 && condition2 --- usage (or) condition1 || condition2 
