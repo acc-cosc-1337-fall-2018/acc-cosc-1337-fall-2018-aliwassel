@@ -1,7 +1,7 @@
 #include"dna.h"
 #include<iostream>
 #include<string>
-
+using namespace std;
 
 
 int main()
@@ -11,8 +11,8 @@ int main()
 	
 	std:: string dna_sample_1 = "GAGCCTACTAACGGAT";
 	std::string dna_sample_2 = "GATCGTAATGACGG";
-	std::cout << "DNA sample 1: " << dna_sample_1 << endl;
-	std::cout << "DNA sample 2: " << dna_sample_2 << endl;
+	std::cout << "DNA sample 1: " << dna_sample_1 << "\n";
+	std::cout << "DNA sample 2: " << dna_sample_2 << "\n";
 	auto point_mutation = get_point_mutations(dna_sample_1, dna_sample_2);
 	std::cout << "DNA Point Mutation :" << point_mutation << "\n\n";
 
@@ -35,8 +35,8 @@ int main()
 
 	//show point mutation sample 4
 	dna_sample_2 = "CATCGAATGACGGCCT";
-	std::cout << "DNA sample 1: " << dna_sample_1 << endl;
-	std::cout << "DNA sample 2 " << dna_sample_2 << endl;
+	std::cout << "DNA sample 1: " << dna_sample_1 << "\n";
+	std::cout << "DNA sample 2 " << dna_sample_2 << "\n";
 	auto point_mutation = get_point_mutations(dna_sample_1, dna_sample_2);
 	cout << "DNA point mutation" << point_mutation << "\n\n";
 
