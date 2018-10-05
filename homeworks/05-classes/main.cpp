@@ -1,29 +1,36 @@
+
 #include "tic_tac_toe_board.h"
 
-//  instanc for function call
-TicTacToeBoard obj1;
+int main() {
+	TicTacToeBoard play_tictac;
 
-int main() 
 
-{
-	string player;
-	int position 
-
-	bool flag = false;
-
-	while (flag)
+	do
 	{
-		cout << "welcom please enter X or O" << endl;
-		cin >> player;
-		cout << "now enter a position";
-		cin>> position;
-		obj1.start_game(player);
-		obj1.mark_board(position);
+		
+		string play;
+		int position = 0;
+
+		cout << "welcom. please press y if you want to play tic tac." <<endl;
+		cin >> play;
+		play_tictac.start_game(play);
+		while (play_tictac.game_over)
+		{
+			if (play == "X" || play == "O")
+			{
+				cout << "where to mark on board" << play_tictac.get_player() << " select a position (1-9)" << endl;
+				cin >> position;
+				play_tictac.mark_board(position);
+			}
+			else
+				cout << "Invalide entry try again: " << endl;
+		}
+		
+
+		
+
+	} while (play_tictac.game_over() == false);
 
 
-
-
-
-
-	}
+	return 0;
 }

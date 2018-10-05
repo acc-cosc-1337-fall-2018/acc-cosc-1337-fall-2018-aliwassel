@@ -1,13 +1,17 @@
 #ifndef INVOICE_DETAIL_H
 #define INVOICE_DETAIL_H
+#include<iostream>
 
 class InvoiceDetail {
 public:
-	InvoiceDetail(double c, int u) {}
-	double get_extended_cost();
+	InvoiceDetail() = default;
+
+	InvoiceDetail(double c, int u): cost(c), units(u) {}
+	double get_extended_cost() const;
+	friend std::istream & operator>>(std::istream & in, InvoiceDetail & d);
 private:
 	double cost;
-	int unit;
+	int units;
 };
 #endif
 
