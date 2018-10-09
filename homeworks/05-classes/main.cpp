@@ -15,7 +15,7 @@ int main() {
 		cout << "welcom. please press y if you want to play tic tac." <<endl;
 		cin >> play;
 		play_tictac.start_game(play);
-		while (play_tictac.game_over)
+		while (play_tictac.game_over==false )
 		{
 			if (play == "X" || play == "O")
 			{

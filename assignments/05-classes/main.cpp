@@ -11,8 +11,8 @@ int main()
 
 	invoice.add_invoice_detail(InvoiceDetail(10, 50));*/
 
-	Invoice invoice;
-	InvoiceDetail deail;
+	/*Invoice invoice;
+	InvoiceDetail detail;
 	std::cin >> detail;
 	
 	invoice.add_invoice_detail(InvoiceDetail(5, 5));
@@ -25,9 +25,16 @@ int main()
 
 	Invoice result = invoice + invoice1;
 	std::cout << result.get_total();
+*/
+	
+	std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
+	Invoice result; for (auto i : invoices)
+	{
+		std::cout << i.get_total() << std::endl;
+		result += i;
+	}
 
-	
-	
+	std::cout << result.get_total() << std::endl;
 	
 
 

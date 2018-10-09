@@ -3,8 +3,15 @@
 
 #include"invoice_detail.h"
 #include<vector>
+#include<iostream>
+using namespace std;
 
 class Invoice {
+	Invoice() = default;
+	Invoice(double a) : total(a) {};
+	Invoice operator +=(const Invoice& i2);
+	
+
 public:
 	void add_invoice_detail(InvoiceDetail detail);
 	double get_total() const;

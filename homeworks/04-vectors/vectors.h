@@ -25,7 +25,7 @@ WRITE THE PARAM AND RETURN COMMENTS BELOW(SEE MY EXAMPLE ABOVE)
 @return the sum of the squares of the integers
 */
 //write function prototype
-int sum_of_squares(vector<int>& numbers);
+long sum_of_squares(vector<int>& numbers);
 
 
 

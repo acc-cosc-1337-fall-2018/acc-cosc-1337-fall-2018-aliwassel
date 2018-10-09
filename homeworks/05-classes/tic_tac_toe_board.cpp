@@ -4,10 +4,10 @@
 bool TicTacToeBoard::game_over() 
 {
 	bool game = false;
-	if ((check_board_full) ||
-		(check_column_win) ||
-		(check_diagonal_win) ||
-		(check_row_win))
+	if ((check_board_full()) ||
+		(check_column_win()) ||
+		(check_diagonal_win()) ||
+		(check_row_win()))
 	{
 		game = true;
 		return game;
@@ -29,16 +29,18 @@ void TicTacToeBoard::start_game(string player)
 
 void TicTacToeBoard::mark_board(int position) 
 {
+	friend operator>>(istream& in, TicTacToeBoard& d) 
+	{
+
+	}
 	pegs[position-1] = next_player;
 	set_next_player();
 	cout << "\n";
 	display_board();
 
+
 }
-string TicTacToeBoard::get_player()
-{
-	return next_player;
-}
+
 void TicTacToeBoard::display_board()
 {
 
