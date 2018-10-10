@@ -32,6 +32,6 @@ private:
 	bool check_board_full();
 	int x_win{ 0 }, o_win{ 0 }, c_win{0};
 	string next_player;
-	vector <string> pegs = { 9," " };
+	std::vector <string> pegs = { 9," " };
 };
 #endif // TIC_TAC_TOE_H
