@@ -29,10 +29,22 @@ void TicTacToeBoard::start_game(string player)
 
 void TicTacToeBoard::mark_board(int position) 
 {
-	friend operator>>(istream& in, TicTacToeBoard& d) 
+	operator>>( istream& in, TicTacToeBoard& d) 
 	{
+		 in >> d.position;
+		 return in;
+		 pegs[position - 1] = next_player;
+		 set_next_player();
+		 cout << "\n";
+		 display_board();
 
 	}
+	 
+	 TicTacToeBoard operator+=(const TicTacToeBoard & b, const TicTacToeBoard & b2)
+	 {
+		 out<<d.cout
+		 return TicTacToeBoard();
+	 }
 	pegs[position-1] = next_player;
 	set_next_player();
 	cout << "\n";

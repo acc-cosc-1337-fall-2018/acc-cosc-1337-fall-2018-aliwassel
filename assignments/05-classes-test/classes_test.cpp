@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include"catch.hpp"
 #include "invoice.h"
+#include"invoice_utility.h"
 
 TEST_CASE("Test get_extended_cost") {
 
@@ -37,3 +38,10 @@ TEST_CASE("Test invoice operator overloading")
 	REQUIRE(result.get_total() == 525);
 }
 
+TEST_CASE("Test invoiceUtility get total") 
+{
+	// create instance of InvoiceUtility
+	InvoiceUtility inv(25);
+	inv.add_invoice_detail(InvoiceDetail(100, 1));
+	REQUIRE(inv.get_total() == 125);
+}

@@ -1,7 +1,8 @@
 
 #include "tic_tac_toe_board.h"
 
-int main() {
+int main() 
+{
 	TicTacToeBoard play_tictac;
 
 

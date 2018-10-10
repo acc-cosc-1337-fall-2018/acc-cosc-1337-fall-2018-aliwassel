@@ -8,9 +8,9 @@ class TicTacToeBoard
 {
 	TicTacToeBoard() = default;
 	TicTacToeBoard(int x, int o, int c) :x_win{ x }, o_win(o), c_win(c){};
-	TicTacToeBoard operator >>(istream & in, TicTacToeBoard& d);
-	TicTacToeBoard operator << (ostream & out, const TicTacToeBoard& d);
-	TicTacToeBoard operator +=(const TicTacToeBoard& b, const TicTacToeBoard& b2);
+	friend TicTacToeBoard operator >>(istream & in, TicTacToeBoard& d);
+	friend TicTacToeBoard operator << (ostream & out, const TicTacToeBoard& d);
+	friend TicTacToeBoard operator +=(const TicTacToeBoard& b, const TicTacToeBoard& b2);
 public:
 
 	bool game_over();

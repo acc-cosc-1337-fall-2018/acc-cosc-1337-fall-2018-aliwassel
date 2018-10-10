@@ -1,5 +1,6 @@
 #include"invoice.h"
 #include<iostream>
+#include"invoice_utility.h"
 int main() 
 {
 	/*InvoiceDetail detail(10, 10);
@@ -27,7 +28,7 @@ int main()
 	std::cout << result.get_total();
 */
 	
-	std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
+	/*std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
 	Invoice result; for (auto i : invoices)
 	{
 		std::cout << i.get_total() << std::endl;
@@ -35,9 +36,14 @@ int main()
 	}
 
 	std::cout << result.get_total() << std::endl;
+	*/
+
+	InvoiceUtility inv(25);
+	inv.add_invoice_detail(InvoiceDetail(100, 1));
+	std::cout << inv.get_total();
 	
-
-
 	return 0;
 }
+
+
 
