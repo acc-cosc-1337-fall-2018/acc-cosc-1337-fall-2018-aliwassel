@@ -11,6 +11,7 @@ int main()
 	TicTacToeBoard a;
 	TicTacToeBoard b;
 	TicTacToeBoard c;
+	TicTacToeBoard result;
 	vector<TicTacToeBoard> vec_tic_tac{ a,b,c };
 	string check_who_won;
 

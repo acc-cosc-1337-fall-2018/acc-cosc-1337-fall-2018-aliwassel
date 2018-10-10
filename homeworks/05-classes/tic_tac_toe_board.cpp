@@ -65,7 +65,7 @@ void TicTacToeBoard::mark_board(int position)
 	display_board();
 }
 
-std::string TicTacToeBoard::get_player()
+TicTacToeBoard::get_player()
 {
 	return next_player();
 }
