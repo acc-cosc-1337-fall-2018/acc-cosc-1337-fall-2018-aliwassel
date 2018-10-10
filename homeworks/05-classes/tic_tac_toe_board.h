@@ -30,11 +30,7 @@ private:
 	void clear_board();
 	bool check_board_full();
 	int x_win{ 0 }, o_win{ 0 }, c_win{0};
-	std::vector<vector <string>>pegs;
-
-	std::string next_player;
-
-
+	string next_player;
 	vector <string> pegs = { 9," " };
 };
 #endif // TIC_TAC_TOE_H

@@ -1,4 +1,3 @@
-
 #include "tic_tac_toe_board.h"
 using namespace std;
 
@@ -10,9 +9,8 @@ int main()
 
 	// instances
 	TicTacToeBoard a;
-	TicTacToeBoard b :
+	TicTacToeBoard b;
 	TicTacToeBoard c;
-	TicTacToeBoard mrk_position;
 	vector<TicTacToeBoard> vec_tic_tac{ a,b,c };
 	string check_who_won;
 
@@ -21,18 +19,20 @@ int main()
 	{
 
 		//send i to >> operator it well mark the board with postion
-		cin >> i;
-		cout"\n";
+		cin >> i.mark_board;
+		cout<<"\n";
 		//call the << operator to see the board
-		cout << i.display_board;
+		cout << i;
 		// accumulated the i to result
-		result += i;
+		{
+			result += i;
+		}
 		// check who won;
-		if (i.get_player() == "X")
+		if (i.set_next_player()) == "X")
 		{
 			check_who_won = "O"
 		}
-		else if (i.get_player() == "O")
+		else if (i.set_next_player() == "O")
 		{
 			check_who_won = "X";
 

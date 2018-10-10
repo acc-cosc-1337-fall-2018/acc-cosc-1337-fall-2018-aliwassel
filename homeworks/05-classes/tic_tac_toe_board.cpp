@@ -1,5 +1,5 @@
 #include"tic_tac_toe_board.h"
-
+using namespace std;
 
 
 TicTacToeBoard TicTacToeBoard::operator+=(const TicTacToeBoard & b)
@@ -45,7 +45,7 @@ bool TicTacToeBoard::game_over()
 		
 
 
-void TicTacToeBoard::start_game(string player)
+void TicTacToeBoard::start_game(std::string player)
 {
 	if (player == "X" || player == "O")
 	{
