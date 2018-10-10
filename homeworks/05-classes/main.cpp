@@ -1,5 +1,6 @@
 
 #include "tic_tac_toe_board.h"
+using namespace std;
 
 int main() 
 {
@@ -9,11 +10,11 @@ int main()
 	do
 	{
 		
-		string play;
+		std::string play;
 		int play_again;
 		int position = 0;
 
-		cout << "welcom. please press y if you want to play tic tac." <<endl;
+		std::cout << "welcom. please press y if you want to play tic tac." <<endl;
 		cin >> play;
 		play_tictac.start_game(play);
 		while (play_tictac.game_over==false )
@@ -21,8 +22,8 @@ int main()
 			if (play == "X" || play == "O")
 			{
 				cout << "where to mark on board" << play_tictac.get_player() << " select a position (1-9)" << endl;
-				cin >> position;
-				play_tictac.mark_board(position);
+				cin >> play_tictac;
+				
 			}
 			else
 				cout << "Invalide entry try again: " << endl;

@@ -41,6 +41,19 @@ int main()
 	InvoiceUtility inv(25);
 	inv.add_invoice_detail(InvoiceDetail(100, 1));
 	std::cout << inv.get_total();
+
+	
+	std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
+	Invoice result; 
+	for (auto i : invoices)
+	{
+		std::cout << i.get_total() << std::endl;
+		result += i;
+	}
+
+	std::cout << result.get_total() << std::endl;
+
+	
 	
 	return 0;
 }

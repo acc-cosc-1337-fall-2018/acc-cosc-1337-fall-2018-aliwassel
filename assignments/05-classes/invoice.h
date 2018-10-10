@@ -7,6 +7,9 @@
 using namespace std;
 
 class Invoice {
+	Invoice() = default;
+	Invoice(double a) : total(a) {}
+	Invoice operator +=(const Invoice & i2);
 	
 	
 

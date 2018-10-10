@@ -1,7 +1,16 @@
 #include"tic_tac_toe_board.h"
+using namespace std;
 
 
-bool TicTacToeBoard::game_over() 
+TicTacToeBoard TicTacToeBoard::operator+=(const TicTacToeBoard & b)
+{
+	x_win += b.x_win;
+	o_win += b.o_win;
+	c_win += b.c_win;
+	return TicTacToeBoard(x_win,o_win,c_win);
+}
+
+bool TicTacToeBoard::game_over()
 {
 	bool game = false;
 	if ((check_board_full()) ||
@@ -9,7 +18,12 @@ bool TicTacToeBoard::game_over()
 		(check_diagonal_win()) ||
 		(check_row_win()))
 	{
-		game = true;
+		if (next_player() == "X") 
+		{
+
+		}
+
+		
 		return game;
 	}
 	else
@@ -27,32 +41,18 @@ void TicTacToeBoard::start_game(string player)
 	
 }
 
-void TicTacToeBoard::mark_board(int position) 
+void TicTacToeBoard::mark_board(int position)
 {
-	operator>>( istream& in, TicTacToeBoard& d) 
-	{
-		 in >> d.position;
-		 return in;
-		 pegs[position - 1] = next_player;
-		 set_next_player();
-		 cout << "\n";
-		 display_board();
-
-	}
-	 
-	 TicTacToeBoard operator+=(const TicTacToeBoard & b, const TicTacToeBoard & b2)
-	 {
-		 out<<d.cout
-		 return TicTacToeBoard();
-	 }
-	pegs[position-1] = next_player;
+	pegs[position - 1] = next_player;
 	set_next_player();
-	cout << "\n";
+	std::cout << "\n";
 	display_board();
-
-
 }
 
+
+
+
+	
 void TicTacToeBoard::display_board()
 {
 
@@ -194,3 +194,35 @@ bool TicTacToeBoard::check_row_win()
 		}
 
 	}
+
+	std::istream & operator>>(std::istream & in, TicTacToeBoard & d)
+	{
+		int position;
+		std::cout << "enter position" << "\n";
+		
+		in >> position;
+		d.mark_board(position);
+		return in;
+		// TODO: insert return statement here
+	}
+
+	std::ostream & operator<<(std::ostream & out, const TicTacToeBoard & d)
+	{
+
+		for (int i = 0; i < 2; i++)
+		{
+			out << d.pegs[i] << "|" << d.pegs[i + 1] << "|" << d.pegs[i + 2] << "\n";
+		}
+		out << d.x_win << d.o_win << d.c_win;
+		return out;
+	}
+
+	
+	
+
+
+
+	
+		
+
+	
