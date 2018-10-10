@@ -2,41 +2,111 @@
 #include "tic_tac_toe_board.h"
 using namespace std;
 
-int main() 
+int main()
 {
-	TicTacToeBoard play_tictac;
+	//new game
+	string players;
+	int position;
+
+	// instances
+	TicTacToeBoard a;
+	TicTacToeBoard b :
+	TicTacToeBoard c;
+	TicTacToeBoard mrk_position;
+	vector<TicTacToeBoard> vec_tic_tac{ a,b,c };
+	string check_who_won;
 
 
-	do
+	for (auto& i : vec_tic_tac)
 	{
-		
-		std::string play;
-		int play_again;
-		int position = 0;
 
-		std::cout << "welcom. please press y if you want to play tic tac." <<endl;
-		cin >> play;
-		play_tictac.start_game(play);
-		while (play_tictac.game_over==false )
+		//send i to >> operator it well mark the board with postion
+		cin >> i;
+		cout"\n";
+		//call the << operator to see the board
+		cout << i.display_board;
+		// accumulated the i to result
+		result += i;
+		// check who won;
+		if (i.get_player() == "X")
 		{
-			if (play == "X" || play == "O")
-			{
-				cout << "where to mark on board" << play_tictac.get_player() << " select a position (1-9)" << endl;
-				cin >> play_tictac;
-				
-			}
-			else
-				cout << "Invalide entry try again: " << endl;
+			check_who_won = "O"
 		}
-		while (play_again) 
+		else if (i.get_player() == "O")
 		{
-			cout << "please enter 1 if you want to continue" << endl;
-			cin >> play_again;
+			check_who_won = "X";
+
 		}
-		
+		else
+		{
+			// check if no winner 
+			cout << "NO winner:" << "\n";
+		}
 
-	} while (play_tictac.game_over() == false);
 
+	}
 
-	return 0;
+	cout << "The Winner is  : " << check_who_won << "\n";
 }
+		
+		
+				
+	
+
+//{
+//	TicTacToeBoard play_tictac;
+//	std::string play;
+//	int play_again;
+//	int position = 0;
+//	bool valid_input;
+//	bool check_for_x_o;
+//
+//
+//
+//	do
+//	{
+//		// confirm user enter X or O
+//		do
+//		{
+//		
+//
+//			cout << "welcom. player 1: mark the postion on the board: " << endl;
+//			cin >> play;
+//			if (play == "X") || (play == "O")
+//			{
+//
+//				play_tictac.start_game(play);
+//				valid_input = true;
+//			}
+//			else 
+//			{
+//				valid_input = false;
+//				cout << "please try again: enter X or O to start the game: " << "\n";
+//				
+//			}
+//		
+//			
+//
+//		} while (!valid_input);
+//		
+//		while (!play_tictac.game_over())
+//		{
+//			cout << "where to mark on board" << play_tictac.get_player() << " select a position (1-9)  " << endl;
+//			cin >> position;
+//			play_tictac.mark_board(position);
+//			play_tictac.display_board();
+//			
+//			
+//		}
+//	 
+//		
+//		cout << "please enter 1 if you want to continue" << endl;
+//		cin >> play_again;
+//		
+//		
+//
+//	} while (play_again=="1");
+//
+//
+//	return 0;
+//}

@@ -3,7 +3,6 @@
 #include<iostream>
 #include<string>
 #include<vector>
-using std::string; 
 class TicTacToeBoard
 {
 	TicTacToeBoard() = default;
