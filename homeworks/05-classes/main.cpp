@@ -4,26 +4,30 @@ using namespace std;
 int main()
 {
 	//new game
-	string players;
-	int position;
-
-	// instances
+	
+	// 3 instances
 	TicTacToeBoard a;
 	TicTacToeBoard b;
 	TicTacToeBoard c;
 	TicTacToeBoard result;
 	vector<TicTacToeBoard> vec_tic_tac{ a,b,c };
-	string check_who_won;
+	
 
 
 	for (auto& i : vec_tic_tac)
 	{
 
 		//send i to >> operator it well mark the board with postion
-		cin >> i.mark_board;
-		cout<<"\n";
+		while (b.game_over = false) 
+		{
+			cin >> b;
+		}
+		result += b;
+		cout << "Game over" << "\n";
+
+		cout<<b;
 		//call the << operator to see the board
-		cout << i;
+		cout << b;
 		// accumulated the i to result
 		{
 			result += i;

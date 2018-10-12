@@ -1,7 +1,8 @@
 #define CATCH_CONFIG_MAIN
 #include"catch.hpp"
 #include "invoice.h"
-#include"invoice_utility.h"
+#include "invoice_utility.h"
+#include"invoice_progress.h"
 
 TEST_CASE("Test get_extended_cost") {
 
@@ -44,4 +45,11 @@ TEST_CASE("Test invoiceUtility get total")
 	InvoiceUtility inv(25);
 	inv.add_invoice_detail(InvoiceDetail(100, 1));
 	REQUIRE(inv.get_total() == 125);
+}
+
+TEST_CASE("Test Invoice_progress get total") 
+{
+	InvoiceProgress inv(250);
+	inv.add_invoice_detail(InvoiceProgress(100, 1));
+	REQUIRE(inv.get_total() == 150);
 }

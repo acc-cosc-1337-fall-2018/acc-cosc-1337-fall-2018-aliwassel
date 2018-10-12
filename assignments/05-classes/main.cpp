@@ -38,25 +38,79 @@ int main()
 	std::cout << result.get_total() << std::endl;
 	*/
 
-	InvoiceUtility inv(25);
-	inv.add_invoice_detail(InvoiceDetail(100, 1));
-	std::cout << inv.get_total();
+	//InvoiceUtility inv(25);
+	//inv.add_invoice_detail(InvoiceDetail(100, 1));
+	//std::cout << inv.get_total();
+
+	//
+	//std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
+	//Invoice result; 
+	//for (auto i : invoices)
+	//{
+	//	std::cout << i.get_total() << std::endl;
+	//	result += i;
+	//}
+
+	//std::cout << result.get_total() << std::endl;
+
+//	class Shape
+//	{
+//	public:
+//		virtual void draw() {}// in run call the each rquested method not Base.
+//	};
+//
+//	class Line : public Shape // inheritance 
+//	{
+//	public:
+//		void draw() { std::cout << "y=mx+b"; }
+//	};
+//
+//	class Circle : public Shape
+//	{
+//	public:
+//		void draw() { std::cout << "pi r square"; }
+//
+//	};
+//
+//	int main()
+//	{
+//		std::vector<std::reference_wraper<Shape>> shapes;
+//		Line line;
+//		Circle c;
+//		shapes.push_back(line);
+//		shapes.push_back(c);
+//		for (auto shape : shapes) {shape.draw()}
+//	}
+//
+//
+//	
+
 
 	
-	std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
-	Invoice result; 
-	for (auto i : invoices)
-	{
-		std::cout << i.get_total() << std::endl;
-		result += i;
-	}
+	
+		// create instance of InvoiceUtility
+		InvoiceUtility invu(25);
+		inv.add_invoice_detail(InvoiceDetail(100, 1));
+		REQUIRE(inv.get_total() == 125);
+	
 
-	std::cout << result.get_total() << std::endl;
+	
+	
+		InvoiceProgress  invp(250);
+		inv.add_invoice_detail(InvoiceDetail(100, 1));
+		invu.get_total();
+		invp.get_total();
+		Invoice& u = invu;
+		Invoice& p = invp;
 
+		u.get_total();
+		p.get_total();
+		std::cout << u.get_total() << "\n";
+		std::count << p.get_total() << "\n";
 	
 	
 	return 0;
-}
+//}
 
 
 
