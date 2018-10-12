@@ -6,17 +6,15 @@
 using namespace std;
 class TicTacToeBoard
 {
-	TicTacToeBoard() = default;
-	TicTacToeBoard(int x, int o, int c) :x_win{ x }, o_win(o), c_win(c){};
-	friend std::istream&  operator >>(std::istream & in, TicTacToeBoard& d);
 	
+public:
+	TicTacToeBoard() = default;
+	TicTacToeBoard(int x, int o, int c) :x_win(x), o_win(o), c_win(c) {};
+	friend std::istream&  operator >>(std::istream & in, TicTacToeBoard& d);
+
 	friend std::ostream & operator << (std::ostream & out, const TicTacToeBoard& d);
 
 	TicTacToeBoard operator+=(const TicTacToeBoard& b);
-
-	
-public:
-
 	bool game_over();
 	void start_game(string player);
 	void mark_board(int position);

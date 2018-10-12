@@ -1,12 +1,14 @@
 #ifndef INVOICE_H
 #define INVOICE_H
-
-#include"invoice_detail.h"
 #include<vector>
 #include<iostream>
+#include"invoice_detail.h"
+
+
 using namespace std;
 
-class Invoice {
+class Invoice 
+{
 public:
 	Invoice() = default;
 	Invoice(double a) : total(a) {}

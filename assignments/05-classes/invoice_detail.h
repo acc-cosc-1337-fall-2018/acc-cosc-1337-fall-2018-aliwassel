@@ -4,7 +4,7 @@
 
 class InvoiceDetail {
 public:
-	InvoiceDetail() = default;
+	InvoiceDetail() = default; //ask c++ to create default constructor
 
 	InvoiceDetail(double c, int u): cost(c), units(u) {}
 	double get_extended_cost() const;
@@ -13,5 +13,5 @@ private:
 	double cost;
 	int units;
 };
-#endif
+#endif//! INVOICE_DETAIL_H
 

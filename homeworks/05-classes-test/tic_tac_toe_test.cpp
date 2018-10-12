@@ -1,6 +1,9 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include"tic_tac_toe_board.h"
+
+
+
 TEST_CASE("Test for function game_over")
 {
 	TicTacToeBoard check_game_over;
@@ -8,20 +11,22 @@ TEST_CASE("Test for function game_over")
 
 }
 
-TEST_CASE("Test set first player set X") 
+TEST_CASE("Test set first player set X")
 {
 	TicTacToeBoard check_x;
 	check_x.start_game("X");
 	REQUIRE(check_x.get_player() == "X");
 }
 
-TEST_CASE("Test set first player set O") 
+TEST_CASE("Test set first player set O")
 {
 	TicTacToeBoard check_o;
 	check_o.start_game("O");
-	REQUIRE(check_o.get_player == "O");
+	REQUIRE(check_o.get_player() == "O");
 }
 // test for 1st column game of tic tac
+
+
 TEST_CASE("Test for win column")
 {
 	TicTacToeBoard first_colmn;
@@ -113,20 +118,20 @@ TEST_CASE("Test for diagonal win")
 	REQUIRE(check2_diagonal.game_over() == true);
 }
 
-	// test for no win game
-	TEST_CASE("Test for no win game") 
-	{
-		TicTacToeBoard no_win;
-		no_win.start_game("X");
-		//check for all postion in pegs
-		no_win.mark_board(1);
-		no_win.mark_board(2);
-		no_win.mark_board(3);
-		no_win.mark_board(4);
-		no_win.mark_board(5);
-		no_win.mark_board(6);
-		no_win.mark_board(7);
-		no_win.mark_board(8);
-		no_win.mark_board(9);
-		REQUIRE(no_win.game_over() == false);
-	}
+// test for no win game
+TEST_CASE("Test for no win game")
+{
+	TicTacToeBoard no_win;
+	no_win.start_game("X");
+	//check for all postion in pegs
+	no_win.mark_board(1);
+	no_win.mark_board(2);
+	no_win.mark_board(3);
+	no_win.mark_board(4);
+	no_win.mark_board(5);
+	no_win.mark_board(6);
+	no_win.mark_board(7);
+	no_win.mark_board(8);
+	no_win.mark_board(9);
+	REQUIRE(no_win.game_over() == false);
+}

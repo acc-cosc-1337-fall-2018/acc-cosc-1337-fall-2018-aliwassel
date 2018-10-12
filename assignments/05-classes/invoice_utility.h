@@ -1,8 +1,7 @@
 #ifndef INVOICE_UTILITY_H
 #define INVOICE_UTILITY_H
-
-#include<iostream>
 #include "invoice.h"
+
 class InvoiceUtility : public Invoice 
 {
 public:

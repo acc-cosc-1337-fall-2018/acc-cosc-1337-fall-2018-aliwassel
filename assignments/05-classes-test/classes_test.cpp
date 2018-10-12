@@ -4,8 +4,8 @@
 #include "invoice_utility.h"
 #include"invoice_progress.h"
 
-TEST_CASE("Test get_extended_cost") {
-
+TEST_CASE("Test config") 
+{
 	InvoiceDetail detail(10, 10);
 
 	REQUIRE(detail.get_extended_cost() == 100);
@@ -14,12 +14,13 @@ TEST_CASE("Test get_extended_cost") {
 
 }
 
-TEST_CASE("Test get total invoice")
+TEST_CASE("Test invoice get total")
 {
 	Invoice invoice;
-	invoice.add_invoice_detail(InvoiceDetail(10, 10));
+	InvoiceDetail d(10, 10);
 	invoice.add_invoice_detail(InvoiceDetail(5, 5));
 	invoice.add_invoice_detail(InvoiceDetail(100, 2));
+
 	REQUIRE(invoice.get_total() == 325);
 
 }
@@ -27,11 +28,11 @@ TEST_CASE("Test get total invoice")
 TEST_CASE("Test invoice operator overloading")
 {
 	Invoice invoice;
-	invoice.add_invoice_detail(InvoiceDetail(10, 10));
+	InvoiceDetail d(10, 10);
+	invoice.add_invoice_detail(d);
 	invoice.add_invoice_detail(InvoiceDetail(5, 5));
 	invoice.add_invoice_detail(InvoiceDetail(100, 2));
-	REQUIRE(invoice.get_total() == 325);
-
+	
 	Invoice invoice1;
 	invoice.add_invoice_detail(InvoiceDetail(100, 2));
 
@@ -50,6 +51,7 @@ TEST_CASE("Test invoiceUtility get total")
 TEST_CASE("Test Invoice_progress get total") 
 {
 	InvoiceProgress inv(250);
-	inv.add_invoice_detail(InvoiceProgress(100, 1));
+	inv.add_invoice_detail(InvoiceDetail(100, 1));
+
 	REQUIRE(inv.get_total() == 150);
 }

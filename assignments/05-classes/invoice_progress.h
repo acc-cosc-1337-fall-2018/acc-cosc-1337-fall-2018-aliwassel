@@ -1,6 +1,6 @@
 #ifndef INVOICE_PROGRESS_H
-#define INVOICE_PROGESS.H
-using std::vector;
+#define INVOICE_PROGESS_H
+
 #include"invoice.h"
 
 class InvoiceProgress : public Invoice 

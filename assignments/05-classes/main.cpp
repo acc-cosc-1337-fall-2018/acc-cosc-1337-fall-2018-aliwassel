@@ -1,57 +1,93 @@
-#include"invoice.h"
+
 #include<iostream>
 #include"invoice_utility.h"
-int main() 
+#include"invoice_progress.h"
+#include<vector>
+
+
+int main()
 {
-	/*InvoiceDetail detail(10, 10);
-	detail.get_extended_cost();
-	Invoice invoice;
-	invoice.add_invoice_detail(InvoiceDetail(10, 10));
-	invoice.add_invoice_detail(InvoiceDetail(5, 5));
-	invoice.add_invoice_detail(InvoiceDetail(100, 2));
-
-	invoice.add_invoice_detail(InvoiceDetail(10, 50));*/
-
-	/*Invoice invoice;
-	InvoiceDetail detail;
-	std::cin >> detail;
 	
-	invoice.add_invoice_detail(InvoiceDetail(5, 5));
-	invoice.add_invoice_detail(InvoiceDetail(100, 2));
+
+		// create instance of InvoiceUtility
+	InvoiceUtility invu(25);
+	invu.add_invoice_detail(InvoiceDetail(100, 1));
 	
-	Invoice invoice1;
-	invoice.add_invoice_detail(InvoiceDetail(100, 2));
 
-	Invoice result = invoice + invoice1;
 
-	Invoice result = invoice + invoice1;
-	std::cout << result.get_total();
+
+
+	InvoiceProgress  invp(250);
+	invp.add_invoice_detail(InvoiceDetail(100, 1));
+
+	std::cout << invu.get_total() << std::endl;
+
+	std::cout << invu.get_total() << std::endl;
+
+	
+	
+	Invoice& u = invu;
+	Invoice& p = invp;
+
+	
+	std::cout << u.get_total() << "\n";
+	std::cout << p.get_total() << "\n";
+	
+	return 0;
+}
+
+
+
+
+/*InvoiceDetail detail(10, 10);
+detail.get_extended_cost();
+Invoice invoice;
+invoice.add_invoice_detail(InvoiceDetail(10, 10));
+invoice.add_invoice_detail(InvoiceDetail(5, 5));
+invoice.add_invoice_detail(InvoiceDetail(100, 2));
+
+invoice.add_invoice_detail(InvoiceDetail(10, 50));*/
+
+/*Invoice invoice;
+InvoiceDetail detail;
+std::cin >> detail;
+
+invoice.add_invoice_detail(InvoiceDetail(5, 5));
+invoice.add_invoice_detail(InvoiceDetail(100, 2));
+
+Invoice invoice1;
+invoice.add_invoice_detail(InvoiceDetail(100, 2));
+
+Invoice result = invoice + invoice1;
+
+Invoice result = invoice + invoice1;
+std::cout << result.get_total();
 */
-	
-	/*std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
-	Invoice result; for (auto i : invoices)
-	{
-		std::cout << i.get_total() << std::endl;
-		result += i;
-	}
 
-	std::cout << result.get_total() << std::endl;
-	*/
+/*std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
+Invoice result; for (auto i : invoices)
+{
+	std::cout << i.get_total() << std::endl;
+	result += i;
+}
 
-	//InvoiceUtility inv(25);
-	//inv.add_invoice_detail(InvoiceDetail(100, 1));
-	//std::cout << inv.get_total();
+std::cout << result.get_total() << std::endl;
+*/
 
-	//
-	//std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
-	//Invoice result; 
-	//for (auto i : invoices)
-	//{
-	//	std::cout << i.get_total() << std::endl;
-	//	result += i;
-	//}
+//InvoiceUtility inv(25);
+//inv.add_invoice_detail(InvoiceDetail(100, 1));
+//std::cout << inv.get_total();
 
-	//std::cout << result.get_total() << std::endl;
+//
+//std::vector<Invoice> invoices{ invoice, invoice1, invoice3 };
+//Invoice result; 
+//for (auto i : invoices)
+//{
+//	std::cout << i.get_total() << std::endl;
+//	result += i;
+//}
+
+//std::cout << result.get_total() << std::endl;
 
 //	class Shape
 //	{
@@ -84,33 +120,4 @@ int main()
 //
 //
 //	
-
-
-	
-	
-		// create instance of InvoiceUtility
-		InvoiceUtility invu(25);
-		inv.add_invoice_detail(InvoiceDetail(100, 1));
-		REQUIRE(inv.get_total() == 125);
-	
-
-	
-	
-		InvoiceProgress  invp(250);
-		inv.add_invoice_detail(InvoiceDetail(100, 1));
-		invu.get_total();
-		invp.get_total();
-		Invoice& u = invu;
-		Invoice& p = invp;
-
-		u.get_total();
-		p.get_total();
-		std::cout << u.get_total() << "\n";
-		std::count << p.get_total() << "\n";
-	
-	
-	return 0;
-//}
-
-
 

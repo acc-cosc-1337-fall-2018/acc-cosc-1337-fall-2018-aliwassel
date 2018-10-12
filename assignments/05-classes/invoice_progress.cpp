@@ -1,4 +1,4 @@
-#include"invoice_progess.h"
+#include"invoice_progress.h"
 
 
 double InvoiceProgress::get_total()const 
