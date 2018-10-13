@@ -19,7 +19,7 @@ double Invoice::get_total() const
 Invoice operator+(const Invoice& i, const Invoice& i2) 
 {
 	Invoice invoice;
-	invoice.total = i.total + i2.get_total;
+	invoice.total = i.total + i2.total;
 	return invoice;
 
 }

@@ -12,8 +12,11 @@ double  InvoiceDetail::get_extended_cost()const
 
 
 std::istream & operator>>(std::istream & in, InvoiceDetail & d)
-{
+{ 
+	std::cout << "Enter cost: ";
 	in >> d.cost;
+	std::cout << "\n Enter units ";
 	in >> d.units;
+	
 	return in;
 }

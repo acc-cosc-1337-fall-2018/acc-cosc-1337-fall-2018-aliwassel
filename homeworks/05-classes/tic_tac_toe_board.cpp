@@ -13,21 +13,23 @@ TicTacToeBoard TicTacToeBoard::operator+=(const TicTacToeBoard & b)
 bool TicTacToeBoard::game_over()
 {
 	bool game = false;
-	if ((check_board_full() || check_column_win() || check_diagonal_win() || check_row_win())
+	if (check_board_full() || check_column_win() || check_diagonal_win() || check_row_win())
 	{
-		if (next_player() == "X")
+		if (check_board_full()) 
+		{
+			c_win++;
+		}
+			
+		else if (next_player == "X")
 		{
 			o_win++;
 
 		}
-		else if (next player() == "O")
+		else if (next_player == "O")
 		{
 			x_win++;
 		}
-		else if (check_board_full)
-		{
-			c_win++;
-		}
+		
 		else
 		{
 			cout << "It is a Draw" << "\n";
@@ -35,6 +37,7 @@ bool TicTacToeBoard::game_over()
 		game = true;
 
 	}
+
 	return game;
 		
 			   
@@ -67,7 +70,7 @@ void TicTacToeBoard::mark_board(int position)
 
 string TicTacToeBoard::get_player()
 {
-	return next_player();
+	return next_player;
 }
 
 
@@ -179,6 +182,8 @@ bool TicTacToeBoard::check_diagonal_win()
 		return true;
 	}
 
+	return false;
+
 }
 	
 	
@@ -187,7 +192,7 @@ bool TicTacToeBoard::check_diagonal_win()
 	
 	void TicTacToeBoard::clear_board()
 	{
-		for (int i; i< pegs.size();i++) 
+		for (int i=0; i< pegs.size();i++) 
 		{
 			pegs[i] = " ";
 			
@@ -204,30 +209,31 @@ bool TicTacToeBoard::check_diagonal_win()
 
 		for (auto f : pegs) 
 		{
-			bool flag = false;
+			
 			//if i = empty space
 			if (f == " ") 
 			{
 				//accumulate 
-				space_cout++;
+				space_full++;
 				
 			}
 			if (space_full == 9)
 			{
 				cout << "NO win" << "\n";
-				flag = true;
+				board_full = true;
 
 			}
 			else 
 			{ 
-				flag = false
+				board_full = false;
 			}
 				
 		
 		}
-		return flag;
+		return board_full;
 
 	}
+
 	//in operator overloard
 	std::istream & operator>>(std::istream & in, TicTacToeBoard & d)
 	{
@@ -245,7 +251,7 @@ bool TicTacToeBoard::check_diagonal_win()
 	std::ostream & operator<<(std::ostream & out, const TicTacToeBoard & d)
 	{
 
-		for (int i = 0; i < 2; i+3)
+		for (int i = 0; 9 < 2; i+=3)
 		{
 			out << d.pegs[i] << "|" << d.pegs[i + 1] << "|" << d.pegs[i + 2] << "\n";
 		}
