@@ -1,16 +1,11 @@
 #include<iostream>
-// include string.
-#include<string>
-using namespace std;
-
 //DO NOT WRITE FUNCTION CODE HERE; USE dna.cpp for function implementation
-
 
 /**
 Given two dna strings returns the hamming distance of the strings.
 
 The Hamming distance between these two strings is 7. Mismatched symbols are
-colored red.  Given two strings s and t of equal length, the Hamming 
+colored red.  Given two strings s and t of equal length, the Hamming
 distance between s and t, denoted dH(s,t), is the number of
 corresponding symbols that differ in s and t.
 
@@ -28,22 +23,24 @@ Sample Output (function return value)
 7
 
 */
-int get_point_mutations(std::string dna1, std::string dna2);
+int get_point_mutations(const std::string& dna1, const std::string& dna2);
 
 /**
 Given a dna string returns the reverse complement of the dna string.
 
-In DNA strings, symbols "A" and "T" are complements of each other, as are 
-"C" and "G".  The reverse complement of a DNA string s is the string sc 
-formed by reversing the symbols of s(reversing the string), then taking the 
-complement of each symbol (e.g., the reverse complement of "GTCA" is 
+In DNA strings, symbols "A" and "T" are complements of each other, as are
+"C" and "G".  The reverse complement of a DNA string s is the string sc
+formed by reversing the symbols of s(reversing the string), then taking the
+complement of each symbol (e.g., the reverse complement of "GTCA" is
 "TGAC").
 
-IMPORTANT!!: ADD PARAMETER(@param) AND RETURN(@return) COMMENTS 
+IMPORTANT!!: ADD PARAMETER(@param) AND RETURN(@return) COMMENTS
 (see my example above)
 
 */
 std::string get_dna_complement(std::string dna);
+
+std::string reverse_string(const std::string& str);
 
 /**
 Given a dna string returns the rna of the string.
@@ -60,50 +57,27 @@ ADD PARAMETER(@param) AND RETURN(@return) COMMENTS
 */
 
 //define function prototype for transcribe_dna_into_rna with one string parameter
-//that returns a string  
+//that returns a string
+std::string transcribe_dna_into_rna(std::string dna);
 
 
 
-/*@param dna_to_rna_string
+/**
+Given a dna string returns the gc content of dna.
 
-Parameter dna_st: GAGCCTAACGGGAT
-
-@ retrun the rna string*/
-
-
-
-//Sample Dataset(s parameter)
-//Parameter dna_string1 : GAGCCTACTAACGGGAT
-//value=GAGCCUAACGGGAU
-//Sample Output(function return value).
-
-
-std::string transcribe_dna_into_rna(std::string dna_st);
-
-
-
-/*Given a dna string returns the gc content of dna.
-
-The GC-content of a DNA string is given by the percentage of symbols in the string 
-that are "C" or "G". For example, the GC-content of "AGCTATAG" is 37.5%. Note that 
+The GC-content of a DNA string is given by the percentage of symbols in the string
+that are "C" or "G". For example, the GC-content of "AGCTATAG" is 37.5%. Note that
 the reverse complement of any DNA string has the same GC-content.
 
 IMPORTANT!!:
 DEFINE FUNCTION PROTOTYPE BELOW AND
 ADD PARAMETER(@param) AND RETURN(@return) COMMENTS
 (see my example above)
-**/
+*/
 
 //define function prototype for get_gc_content with a string parameter that returns
 //a double
-// @param  dna. it is a dna string. 
-//dna=GAGCCTACTAACGGGAT
-//return a double 
-//gc_dna= 
-
-
-
-double get_gc_content(std::string dna);
+double get_gc_content(const std::string& dna);
 
 
 /**
