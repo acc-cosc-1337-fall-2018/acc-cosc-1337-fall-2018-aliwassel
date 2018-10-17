@@ -3,37 +3,56 @@
 #include"invoice_utility.h"
 #include"invoice_progress.h"
 #include<vector>
-
+#include<shape.h>
+#include<memory>
+using namespace std;
 
 int main()
 {
+	/*std::unique_ptr <Shape> line = {std::make_unique<Line>(), std::make_unique<Circle>()};
+	line->draw();*/
 
-	
+	/*vector <Shape*> Shapes ( std::make_unique<Line>(), std::make_unique<Circle> ()};
+	for (auto shape : Shapes)
+	{
 
-		// create instance of InvoiceUtility
-	InvoiceUtility invu(25);
-	invu.add_invoice_detail(InvoiceDetail(100, 1));
-	
+		shape->draw();
+	}*/
+	vector < unique_ptr<Shape>>shapes;
+	shapes.push_back(std::make_unique<Line>());
+	shapes.push_back(std::make_unique<Circle>());
+	for (auto & shape : shapes)
+	{
+		shape->draw();
+	}
+	//}
+
+	//
+
+	//	// create instance of InvoiceUtility
+	//InvoiceUtility invu(25);
+	//invu.add_invoice_detail(InvoiceDetail(100, 1));
+	//
 
 
 
 
-	InvoiceProgress  invp(250);
-	invp.add_invoice_detail(InvoiceDetail(100, 1));
+	//InvoiceProgress  invp(250);
+	//invp.add_invoice_detail(InvoiceDetail(100, 1));
 
-	std::cout << invu.get_total() << std::endl;
+	//std::cout << invu.get_total() << std::endl;
 
-	std::cout << invu.get_total() << std::endl;
+	//std::cout << invu.get_total() << std::endl;
 
-	
-	
-	Invoice& u = invu;
-	Invoice& p = invp;
+	//
+	//
+	//Invoice& u = invu;
+	//Invoice& p = invp;
 
-	
-	std::cout << u.get_total() << "\n";
-	std::cout << p.get_total() << "\n";
-	
+	//
+	//std::cout << u.get_total() << "\n";
+	//std::cout << p.get_total() << "\n";
+	system("pause");
 	return 0;
 }
 

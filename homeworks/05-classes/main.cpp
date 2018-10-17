@@ -24,6 +24,7 @@ int main()
 		cout << "Game over" << "\n";
 		
 		cout << b;
+		system("pause");
 		return 0;
 	}
 	//		//call the << operator to see the board
