@@ -14,16 +14,16 @@ int main()
 
 
 
-	for (auto& i : vec_tic_tac)
+	for (auto i : vec_tic_tac)
 	{
-		while (b.game_over() == false)
+		while (i.game_over() == false)
 		{
-			cin >> b;
+			cin >> a;
+			result += a;
 		}
-		result += b;
+		cout << result;
 		cout << "Game over" << "\n";
 		
-		cout << b;
 		system("pause");
 		return 0;
 	}
