@@ -13,20 +13,26 @@ int main()
 	vector<TicTacToeBoard> vec_tic_tac{ a,b,c };
 
 
-
 	for (auto i : vec_tic_tac)
 	{
+		i.start_game("X");
 		while (i.game_over() == false)
 		{
-			cin >> a;
-			result += a;
+			cin >> i;
+			
 		}
-		cout << result;
+		result += i;
+		
 		cout << "Game over" << "\n";
+
+		
 		
 		system("pause");
-		return 0;
+		
 	}
+	cout << result;
+	system("pause");
+	return 0;
 	//		//call the << operator to see the board
 	//		cout << b;
 	//		// accumulated the i to result

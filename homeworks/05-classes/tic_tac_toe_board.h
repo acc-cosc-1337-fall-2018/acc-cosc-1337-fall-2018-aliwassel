@@ -21,6 +21,8 @@ public:
 	string get_player();
 	void display_board();
 
+
+
 private:
 	void set_next_player();
 	bool check_column_win();

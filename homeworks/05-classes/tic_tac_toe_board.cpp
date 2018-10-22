@@ -139,8 +139,8 @@ bool TicTacToeBoard::check_column_win()
 	{
 		return true;
 	}
-	else
-		cout << "no win" << endl;
+
+		
 	return false;
 }
 
@@ -161,7 +161,7 @@ bool TicTacToeBoard::check_row_win()
 	}
 	else
 	{
-		cout << "no win" << "\n";
+		
 		return false;
 	}
 
@@ -203,9 +203,9 @@ bool TicTacToeBoard::check_diagonal_win()
 
 	bool TicTacToeBoard::check_board_full() 
 	{
-		bool board_full = false;
+		bool board_full = true;
 		//set up accumulator 
-		int space_full{ 0 };
+		//int space_full{ 0 };
 
 		for (auto f : pegs) 
 		{
@@ -214,22 +214,15 @@ bool TicTacToeBoard::check_diagonal_win()
 			if (f == " ") 
 			{
 				//accumulate 
-				space_full++;
+				board_full=false;
+				//cout << "NO win" << "\n";
+				break;
 				
 			}
-			if (space_full == 9)
-			{
-				cout << "NO win" << "\n";
-				board_full = true;
+			
 
-			}
-			else 
-			{ 
-				board_full = false;
-			}
-				
-		
 		}
+
 		return board_full;
 
 	}
@@ -255,15 +248,13 @@ bool TicTacToeBoard::check_diagonal_win()
 		{
 			out << d.pegs[i] << "|" << d.pegs[i + 1] << "|" << d.pegs[i + 2] << "\n";
 		}
-		out << d.x_win << d.o_win << d.c_win;
+		out <<"X_win "<< d.x_win << endl;
+		out <<"O_win "<< d.o_win << endl;
+		out <<"C_win"<< d.c_win << endl;
 		return out;
 	}
 
 	
-	
-
-
-
 	
 		
 
