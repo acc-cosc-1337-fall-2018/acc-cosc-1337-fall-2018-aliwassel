@@ -204,8 +204,8 @@ bool TicTacToeBoard::check_diagonal_win()
 	bool TicTacToeBoard::check_board_full() 
 	{
 		bool board_full = true;
-		//set up accumulator 
-		//int space_full{ 0 };
+		 
+		
 
 		for (auto f : pegs) 
 		{
@@ -213,9 +213,9 @@ bool TicTacToeBoard::check_diagonal_win()
 			//if i = empty space
 			if (f == " ") 
 			{
-				//accumulate 
+				// if board full do nothing 
 				board_full=false;
-				//cout << "NO win" << "\n";
+				
 				break;
 				
 			}

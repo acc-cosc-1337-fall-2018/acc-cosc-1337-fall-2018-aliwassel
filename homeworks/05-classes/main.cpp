@@ -11,28 +11,64 @@ int main()
 	TicTacToeBoard c;
 	TicTacToeBoard result;
 	vector<TicTacToeBoard> vec_tic_tac{ a,b,c };
-
-
-	for (auto i : vec_tic_tac)
+	TicTacToeBoard manager;
+	string player_choice;
+	char n;
+	int quite = 1 ;
+	while (quite==1)
 	{
-		i.start_game("X");
-		while (i.game_over() == false)
+		for (auto i : vec_tic_tac)
 		{
-			cin >> i;
-			
-		}
-		result += i;
-		
-		cout << "Game over" << "\n";
+			std::cout
+				<< "Whoe goes first? X or O:  ";
+			cin >> player_choice;
 
-		
-		
-		system("pause");
-		
+			if (player_choice == "X" || player_choice == "O")
+			{
+				i.start_game(player_choice);
+			}
+			else
+			{
+				cout << "invalid entry try again" << endl;
+				break;
+			}
+
+
+
+			while (i.game_over() == false)
+			{
+				cin >> i;
+
+			}
+			result += i;
+			cout << result;
+
+			std::cout << "Game over" << "\n";
+
+
+
+			std::system("pause");
+		}
+
+
+		if (quite=='f')
+		{
+			std::cout << result;
+			break;
+		}
+
+
 	}
-	cout << result;
-	system("pause");
+	
+	std::system("pause");
+
+
 	return 0;
+	
+	
+		
+
+	
 	//		//call the << operator to see the board
 	//		cout << b;
 	//		// accumulated the i to result
