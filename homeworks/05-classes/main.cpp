@@ -14,8 +14,8 @@ int main()
 	TicTacToeBoard manager;
 	string player_choice;
 	char n;
-	int quite = 1 ;
-	while (quite==1)
+	int quite = 1;
+	while (quite == 1)
 	{
 		for (auto i : vec_tic_tac)
 		{
@@ -51,7 +51,7 @@ int main()
 		}
 
 
-		if (quite=='f')
+		if (quite == 'f')
 		{
 			std::cout << result;
 			break;
@@ -59,16 +59,16 @@ int main()
 
 
 	}
-	
+
 	std::system("pause");
 
 
 	return 0;
-	
-	
-		
 
-	
+
+
+
+
 	//		//call the << operator to see the board
 	//		cout << b;
 	//		// accumulated the i to result
