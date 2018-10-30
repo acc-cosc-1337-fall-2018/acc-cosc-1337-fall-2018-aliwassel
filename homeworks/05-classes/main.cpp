@@ -1,81 +1,90 @@
 #include "tic_tac_toe_board.h"
+#include"tic_tac_toe_3.h"
+
 using namespace std;
 
 int main()
 {
-	//new game
 
+	vector<unique_ptr <TicTacToeBoard>> bases;
+	bases.push_back(make_unique <TicTacToe3>());
+	
+
+
+	////new game
+	//
 	// 3 instances
-	TicTacToeBoard a;
-	TicTacToeBoard b;
-	TicTacToeBoard c;
-	TicTacToeBoard result;
-	vector<TicTacToeBoard> vec_tic_tac{ a,b,c };
-	TicTacToeBoard manager;
-	string player_choice;
-	char n;
-	int quite = 1;
-	while (quite == 1)
-	{
-		for (auto i : vec_tic_tac)
-		{
-			std::cout
-				<< "Whoe goes first? X or O:  ";
-			cin >> player_choice;
+	//TicTacToeBoard a;
+	//TicTacToeBoard b;
+	//TicTacToeBoard c;
+	//TicTacToeBoard result;
+	//vector<TicTacToeBoard> vec_tic_tac{ a,b,c };
+	//TicTacToeBoard manager;
 
-			if (player_choice == "X" || player_choice == "O")
-			{
-				i.start_game(player_choice);
-			}
-			else
-			{
-				cout << "invalid entry try again" << endl;
-				break;
-			}
+	//string player_choice;
+	//char n;
+	//int quite = 1;
+	//while (quite == 1)
+	//{
+	//	for (auto i : vec_tic_tac)
+	//	{
+	//		std::cout
+	//			<< "Whoe goes first? X or O:  ";
+	//		cin >> player_choice;
 
-
-
-			while (i.game_over() == false)
-			{
-				cin >> i;
-
-			}
-			result += i;
-			cout << result;
-
-			std::cout << "Game over" << "\n";
+	//		if (player_choice == "X" || player_choice == "O")
+	//		{
+	//			i.start_game(player_choice);
+	//		}
+	//		else
+	//		{
+	//			cout << "invalid entry try again" << endl;
+	//			break;
+	//		}
 
 
 
-			std::system("pause");
-		}
+	//		while (i.game_over() == false)
+	//		{
+	//			cin >> i;
 
+	//		}
+	//		result += i;
+	//		cout << result;
 
-		if (quite == 'f')
-		{
-			std::cout << result;
-			break;
-		}
-
-
-	}
-
-	std::system("pause");
-
-
-	return 0;
+	//		std::cout << "Game over" << "\n";
 
 
 
+	//		std::system("pause");
+	//	}
 
 
-	//		//call the << operator to see the board
+	//	if (quite == 'f')
+	//	{
+	//		std::cout << result;
+	//		break;
+	//	}
+
+
+	//}
+
+	//std::system("pause");
+
+
+	//return 0;
+
+
+
+
+
+	//		call the << operator to see the board
 	//		cout << b;
-	//		// accumulated the i to result
+	//		 accumulated the i to result
 	//		{
 	//			result += i;
 	//		}
-	//		// check who won;
+	//		 check who won;
 	//		if (i.set_next_player()) == "X")
 	//		{
 	//			check_who_won = "O"
@@ -87,7 +96,7 @@ int main()
 	//		}
 	//		else
 	//		{
-	//			// check if no winner 
+	//			 check if no winner 
 	//			cout << "NO winner:" << "\n";
 	//		}
 	//
@@ -113,7 +122,7 @@ int main()
 	//
 	//	do
 	//	{
-	//		// confirm user enter X or O
+	//		 confirm user enter X or O
 	//		do
 	//		{
 	//		
@@ -155,7 +164,7 @@ int main()
 	//
 	//	} while (play_again=="1");
 	//
-	//
-	//	return 0;
-	//}
+	
+		return 0;
+	
 }
