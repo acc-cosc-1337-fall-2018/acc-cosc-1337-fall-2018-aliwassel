@@ -14,47 +14,42 @@ public:
 	const bool game_over();
 	void start_game(string player) { next_player = player; clear_board(); }
 	void mark_board(const int position) { pegs[position - 1].val = next_player; set_next_player();}
-	const string get_player();
-	void display_board();
-	TicTacToeBoard operator +=(const TicTacToeBoard & b);
-	friend ostream& operator<<(ostream& o, const TicTacToeBoard& b);
+	string get_player() const ;
+	
+	friend ostream& operator<<(ostream& o, const TicTacToeBoard& board);
 	friend istream & operator>>(istream& in, TicTacToeBoard & b);
+
 	// function that take the operator as argument? 
 
 	virtual void print(ostream& out) const = 0;
 	// function takes the istream as argument 
-	virtual void get_input(istream & in) = 0;
-
-	//TicTacToeBoard operator +=(const TicTacToeBoard& b);
 	
-	/*
-	void mark_board(int position);
-	string get_winner();
-	string get_player();
-	*/
+
 	
 	
 
 
 
 private:
+	
+protected:
 	int x_win{ 0 }, o_win{ 0 }, c_win{ 0 };
 	string next_player;
 	void set_next_player();
-	vector <Peg> pegs = { 9 };
-	
-protected:
+	virtual bool check_column_win() const=0;
+	virtual bool check_diagonal_win() const =0;
+	virtual void display_board() const = 0;
+	virtual bool check_row_win() const =0;
+	virtual void get_input(istream & in) = 0;
 
-	virtual bool check_board_full() const;
-	const bool check_column_win();
-	const bool check_diagonal_win();
-	const bool check_row_win();
+
+	bool check_board_full() const;
 	void clear_board();
-	void display_board();
-	void set_next_player();
-	void get_input();
-	int value{ 0 };
-	string winner;
+	vector <Peg> pegs{ 9 };
+	string next_player;
+	
+	
+
 	//friend std::istream&  operator >>(std::istream & in, TicTacToeBoard& d);
 
 	//friend std::ostream & operator << (std::ostream & out, const TicTacToeBoard& d);
