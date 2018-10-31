@@ -2,11 +2,19 @@
 #define TIC_TAC_TOE_3_H
 
 #include"tic_tac_toe_board.h"
-#include"peg.h"
+
 class TicTacToe3 : public TicTacToeBoard {
 
 public:
 	TicTacToe3();
+
+protected:
+	bool check_column_win()const override;
+	bool check_diagonal_win()const override;
+	bool check_row_win() const override;
+	void display_board(ostream & out)const override;
+	void get_input(istream & in)override;
+
 
 	//void print(ostream& out) const override;
 	//void get_input(istream & in) override;
@@ -15,12 +23,6 @@ public:
 
 
 
-protected:
-	bool check_column_win()const override;
-	bool check_diagonal_win()const override;
-	bool check_row_win() const override;
-	void display_board(ostream & out )const override;
-	void get_input(istream & in)override;
 
 
 };

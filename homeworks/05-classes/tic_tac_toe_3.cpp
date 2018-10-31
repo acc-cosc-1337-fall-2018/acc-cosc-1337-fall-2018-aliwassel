@@ -13,6 +13,7 @@ TicTacToe3::TicTacToe3()
 
 void TicTacToe3::display_board(ostream& out) const
 {
+	cout << endl;
 	for (unsigned i = 0; i < pegs.size(); i += 3)
 	{
 		out << pegs[i].val << "|" << pegs[i + 1].val << "|" << pegs[i + 2].val << endl;
@@ -20,76 +21,30 @@ void TicTacToe3::display_board(ostream& out) const
 	out << x_win << o_win << c_win << endl;
 }
 
-void TicTacToe3::print(ostream& out ) const 
+
+bool TicTacToe3::check_column_win() const
 {
-	out << "TicTacToe 3" << endl;
-	out << value << endl;
+	bool x_col_1, x_col_2, x_col_3;
+	bool o_col_1, o_col_2, o_col_3;
+	x_col_1 = (pegs[0].val == "X" && pegs[3].val == "X" && pegs[6].val == "X");
+	x_col_2 = (pegs[1].val == "X" && pegs[4].val == "X" && pegs[7].val == "X");
+	x_col_3 = (pegs[2].val == "X" && pegs[5].val == "X" && pegs[8].val == "X");
+
+	if (x_col_1 || x_col_2 || x_col_3) { return true; }
+	//check rows of O
+	o_col_1 = (pegs[0].val == "O" && pegs[3].val == "O" && pegs[6].val == "O");
+	o_col_2 = (pegs[1].val == "O" && pegs[4].val == "O" && pegs[7].val == "O");
+	o_col_3 = (pegs[2].val == "O" && pegs[5].val == "O" && pegs[8].val == "O");
+	if (o_col_1 || o_col_2 || o_col_3) { return true; }
+	else { return false; }
+}
 
 	
-}
-
-void TicTacToe3::get_input(istream & in )
-{
-	cout << "1st derived class \n";
-	in >> value;
-}
 
 
-void TicTacToe3::display_board(ostream& out) const
-{
-	for (unsigned i = 0; i < pegs.size(); i += 3)
-	{
-		out << pegs.val << "|" << pegs[i + 1].val << "|" << pegs[i + 2].val << endl;
-	}
-	out << x_win << o_win << c_win << endl;
+	
 
-
-
-}
-
-
-
-
-
-bool TicTacToeBoard3::check_column_win() const
-{
-
-	if (pegs[0].val == "X" && pegs[3].val == "X" && pegs[6].val == "X")
-	{
-		return true;
-
-	}
-	else if (pegs[1].val == "X" && pegs[4].val == "X" && pegs[7].val == "X")
-	{
-		return true;
-
-	}
-	else if (pegs[2].val == "X" && pegs[5].val == "X" && pegs[8].val == "X")
-	{
-		return true;
-	}
-
-
-	else if (pegs[0].val == "O" && pegs[3].val == "O" && pegs[6].val == "O")
-	{
-		return true;
-
-	}
-	else if (pegs[1].val == "O" && pegs[4].val == "O" && pegs[7].val == "O")
-	{
-		return true;
-
-	}
-	else if (pegs[2].val == "O" && pegs[5].val == "O" && pegs[8].val == "O")
-	{
-		return true;
-	}
-
-
-	return false;
-}
-
-bool TicTacToeBoard3::check_row_win() const
+bool TicTacToe3:: check_row_win() const
 {
 
 	if ((pegs[0].val == "X" && pegs[1].val == "X" && pegs[2].val == "X") || (pegs[0].val == "O" && pegs[1].val == "O" && pegs[2].val == "O"))
@@ -110,11 +65,7 @@ bool TicTacToeBoard3::check_row_win() const
 		return false;
 	}
 
-
-
-
 }
-
 
 bool TicTacToe3::check_diagonal_win() const
 {
@@ -138,3 +89,5 @@ void TicTacToe3::get_input(istream & in)
 	in >> position;
 	mark_board(position);
 }
+
+

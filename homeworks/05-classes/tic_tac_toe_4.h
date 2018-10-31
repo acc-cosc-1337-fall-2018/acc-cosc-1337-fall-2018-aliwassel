@@ -1,20 +1,24 @@
-#include"Tic_tac_toe_board.h"
+#ifndef TIC_TAC_TOE_4_H
 
+#define TIC_TAC_TOE_4
+
+#include"tic_tac_toe_board.h"
 
 
 class TicTacToe4 : public TicTacToeBoard
 {
 public:
-	TicTacToe4() = default;
-	void print(ostream& out) const override;
+	TicTacToe4();
+
+protected:
+
+	bool check_column_win() const override;
+	bool check_diagonal_win()const override;
+	bool check_row_win()const override;
+	void display_board(ostream & out)const override;
 	void get_input(istream& in) override;
 
 
-protected:
-	bool check_column_win();
-	bool check_diagonal_win();
-	bool check_row_win();
-	void display_board();
-	void get_input();
-
 };
+#endif // !TIC_TAC_TOE_4_H
+

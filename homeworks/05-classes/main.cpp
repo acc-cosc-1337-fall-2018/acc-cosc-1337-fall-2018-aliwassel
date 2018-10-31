@@ -1,17 +1,94 @@
 #include "tic_tac_toe_board.h"
 #include"tic_tac_toe_3.h"
+#include"tic_tac_toe_4.h"
+#include"tic_tac_toe_manager.h"
+#include<istream>
+#include<string>
 
 using namespace std;
 
 int main()
 {
+	/*TicTacToeManager manager;
+	manager.run();
+	cout << manager;*/
+	string input_3;
+	string input_4;
 
-	vector<unique_ptr <TicTacToeBoard>> bases;
-	bases.push_back(make_unique <TicTacToe3>());
-	
+	TicTacToe3 tic_3;
+
+	cout << "Tic_Tac_Toe 3x3 " << endl;
+	cout << "Who goes first X or O ? ";
+	cin >> input_3;
+	if (input_3 == "X" || "O")
+	{
+		while (!tic_3.game_over())
+		{
+			tic_3.start_game(input_3);
+			cin >> tic_3;
+			cout << "\nTic tac toe 3 ";
+
+		}
+		
+		
+
+	}
+
+	else 
+	{
+		cout << "Sorry! invalid choice, please try again" << endl;
+	}
+
+		
+	TicTacToe4 tic_4;
+
+	cout << "Tic_Tac_Toe 4x4 " << endl;
+	cout << "Who goes first X or O ? ";
+	cin >> input_4;
+	if (input_4 == "X" || "O")
+	{
+		while (!tic_4.game_over())
+		{
+			tic_4.start_game(input_4);
+			cin >> tic_4;
+			cout << "\nTic tac toe 4 ";
+
+		}
 
 
-	////new game
+
+	}
+
+	else
+	{
+		cout << "Sorry! invalid choice, please try again" << endl;
+	}
+
+   	  
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//vector<unique_ptr <TicTacToeBoard>> bases;
+	//bases.push_back(make_unique <TicTacToe3>());
+	//
+
+
+	//new game
 	//
 	// 3 instances
 	//TicTacToeBoard a;
@@ -164,7 +241,6 @@ int main()
 	//
 	//	} while (play_again=="1");
 	//
-	
-		return 0;
-	
-}
+	//
+	//	return 0;
+	//
