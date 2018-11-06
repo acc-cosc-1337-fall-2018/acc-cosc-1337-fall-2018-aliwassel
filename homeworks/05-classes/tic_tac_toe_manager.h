@@ -3,8 +3,8 @@
 #include "tic_tac_toe_board.h"
 #include"tic_tac_toe_3.h"
 #include"tic_tac_toe_4.h"
-
-
+#include<memory>
+#include <string>
 enum GameType
 {
 	tic_tac_toe_3,
@@ -12,25 +12,29 @@ enum GameType
 
 };
 
-class TicTacToeManager :public TicTacToeBoard
+class TicTacToeManager
 {
 public:
+	TicTacToeManager() = default;
+	TicTacToeManager(int x, int o, int c) : x_win{ x }, o_win(o), c_win(c){};
+	
 
 	unique_ptr <TicTacToeBoard> get_game(GameType gametype);
 
-	void save_game(unique_ptr<TicTacToeBoard>);
+	void save_game(unique_ptr<TicTacToeBoard>baord);
+	friend ostream& operator<< (ostream& out, const TicTacToeManager & manager);
 
 	void run();
 
 		
-	friend ostream& operator<< (ostream& out, const TicTacToeManager & manager);
 private:
-	
+	void update_winner_count(std::string& winner);
+
 	vector <std::unique_ptr<TicTacToeBoard >>boards;
 	
 	int x_win{ 0 }, o_win{ 0 }, c_win{ 0 };
 
-	void update_winner_count(std::string&);
+	
 
 };
 

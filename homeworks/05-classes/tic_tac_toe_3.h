@@ -9,11 +9,11 @@ public:
 	TicTacToe3();
 
 protected:
-	bool check_column_win()const override;
-	bool check_diagonal_win()const override;
-	bool check_row_win() const override;
-	void display_board(ostream & out)const override;
-	void get_input(istream & in)override;
+	bool check_column_win()const ;
+	bool check_diagonal_win()const;
+	bool check_row_win() const;
+	void display_board(std::ostream & out)const;
+	void get_input(istream & in) const ;
 
 
 	//void print(ostream& out) const override;

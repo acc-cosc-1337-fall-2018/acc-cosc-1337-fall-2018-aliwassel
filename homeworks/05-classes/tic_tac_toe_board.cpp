@@ -2,27 +2,26 @@
 
 
 
-
- bool TicTacToeBoard::game_over() 
-{
-	bool end_game = check_board_full() || check_column_win() || check_diagonal_win() || check_row_win();
-	if (end_game)
-	{
-		if (check_board_full())
-		{
-			c_win++;
-		}
-		else if (next_player == "X")
-		{
-			o_win++;
-		}
-		else
-		{
-			x_win++;
-		}
-	}
-	return end_game;
-}
+// bool TicTacToeBoard::game_over() 
+//{
+//	bool end_game = check_board_full() || check_column_win() || check_diagonal_win() || check_row_win();
+//	if (end_game)
+//	{
+//		if (check_board_full())
+//		{
+//			c_win++;
+//		}
+//		else if (next_player == "X")
+//		{
+//			o_win++;
+//		}
+//		else
+//		{
+//			x_win++;
+//		}
+//	}
+//	return end_game;
+//}
 
 
 
@@ -72,6 +71,8 @@ bool TicTacToeBoard::check_board_full()const
 	}
 	return true;
 }
+
+
 
 
 //in operator overloard

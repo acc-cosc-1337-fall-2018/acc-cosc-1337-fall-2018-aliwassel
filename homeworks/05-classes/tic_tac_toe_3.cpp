@@ -1,4 +1,5 @@
 #include"tic_tac_toe_3.h"
+#include "tic_tac_toe_manager.h"
 
 TicTacToe3::TicTacToe3()
 {
@@ -18,7 +19,7 @@ void TicTacToe3::display_board(ostream& out) const
 	{
 		out << pegs[i].val << "|" << pegs[i + 1].val << "|" << pegs[i + 2].val << endl;
 	}
-	out << x_win << o_win << c_win << endl;
+	
 }
 
 

@@ -17,7 +17,7 @@ void TicTacToe4::display_board(ostream & out) const
 	{
 		out << pegs[i].val << "|" << pegs[i + 1].val << "|" << pegs[i + 2].val << "|"
 			<< pegs[i + 3].val << "|" << endl;
-		out << endl << x_win << " " << o_win << " " << " " << c_win << endl;
+		
 
 
 	}
