@@ -25,7 +25,7 @@ public:
 	// function takes the istream as argument 
 
 protected:
-	int x_win{ 0 }, o_win{ 0 }, c_win{ 0 };
+	
 	string next_player;
 	void set_next_player();
 	virtual bool check_column_win() const=0;

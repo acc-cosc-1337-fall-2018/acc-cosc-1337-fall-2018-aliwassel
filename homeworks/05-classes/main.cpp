@@ -8,52 +8,86 @@
 using namespace std;
 
 string input_4;
+string input_3;
+
 
 TicTacToe3 tic_tac_3;
 TicTacToe4 tic_tac_4;
 
-void valid_input()
+void valid_input_ttt_3()
 {
-	string input_3;
-	cout << " Who goes first X or O" << endl;
+	cout << " Who goes first X or O ";
 	cin >> input_3;
+
 	if (input_3 == "X" || input_3 == "O")
 	{
-		
 		tic_tac_3.start_game(input_3);
 	}
-	else
+
+
+	else if (input_3 != "X" || input_3 != "O")
 	{
-		
 		cout << "Sorry! Invalid choice, please try again\n";
 	}
+	cout << "Tic Tac Toe 3x3 \n";
+	while (tic_tac_3.game_over() == false)
+	{
 
+		cout << tic_tac_3;
+		cin >> tic_tac_3;
 
+	}
 }
 
 
-int main()
-{
-	valid_input();
-	cout << "Tic Tac Toe 3x3 \n";
-	while (tic_tac_3.game_over()==false)
-	{
-		
-		cout << tic_tac_3;
-		cin >> tic_tac_3;
-		
-		
-		
-	}
+
+
 	
-	valid_input();
+
+
+
+	
+
+
+void valid_input_ttt_4()
+{
+	string input_4;
+	cout << " Who goes first X or O ";
+	cin >> input_4;
+
+	if (input_4 == "X" || input_4 == "O")
+	{
+
+		tic_tac_3.start_game(input_4);
+	}
+	else
+	{
+
+		cout << "Sorry! Invalid choice, please try again\n";
+	}
 	cout << "Tic Tac Toe 4x4 \n";
 	while (tic_tac_4.game_over())
 	{
 		cin >> tic_tac_4;
 		cout << tic_tac_4;
 
+
+
 	}
+
+}
+
+
+
+
+int main()
+{
+	
+	valid_input_ttt_3();
+	
+	
+	valid_input_ttt_4();
+	
 
 
 
