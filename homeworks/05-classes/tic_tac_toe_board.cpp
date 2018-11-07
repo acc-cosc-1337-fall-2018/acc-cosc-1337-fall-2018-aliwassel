@@ -96,7 +96,7 @@ std::ostream & operator<<(std::ostream & out, const TicTacToeBoard & board)
 	{
 		// mark the first postion on the board 
 		out << board.pegs[i].val << "|" << board.pegs[i + 1].val << "|" << board.pegs[i + 2].val << "|" << endl;
-		out << board.x_win << " " << board.o_win << " " << board.c_win << endl;
+		
 
 	}
 	return out;
