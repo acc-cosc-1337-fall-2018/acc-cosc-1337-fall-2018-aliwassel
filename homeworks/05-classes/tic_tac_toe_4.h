@@ -1,6 +1,5 @@
 #ifndef TIC_TAC_TOE_4_H
-
-#define TIC_TAC_TOE_4
+#define TIC_TAC_TOE_4_H
 
 #include"tic_tac_toe_board.h"
 

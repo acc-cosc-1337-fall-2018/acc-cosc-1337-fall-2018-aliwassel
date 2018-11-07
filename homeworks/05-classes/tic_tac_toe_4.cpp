@@ -13,7 +13,7 @@ TicTacToe4::TicTacToe4()
 void TicTacToe4::display_board(ostream & out) const
 {
 	cout << endl;
-	for(int i=0; i<4; i+=4)
+	for(unsigned i=0; i<pegs.size(); i+=4)
 	{
 		out << pegs[i].val << "|" << pegs[i + 1].val << "|" << pegs[i + 2].val << "|"
 			<< pegs[i + 3].val << "|" << endl;
@@ -60,7 +60,10 @@ bool TicTacToe4::check_diagonal_win() const
 		      pegs[0].val != " " && pegs[15].val != " ");
 	dia_2 = ((pegs[3].val == pegs[6].val && pegs[9].val == pegs[12].val) &&
 		      pegs[3].val != " " && pegs[12].val != " ");
-	if (dia_1 || dia_2) { return true; }
+	if (dia_1 || dia_2) 
+	{
+		return true; 
+	}
 	else 
 	{
 		return false;

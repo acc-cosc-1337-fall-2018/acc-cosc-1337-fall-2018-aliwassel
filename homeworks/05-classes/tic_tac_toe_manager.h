@@ -1,10 +1,13 @@
 #ifndef TIC_TAC_TOE_MANAGER_H
 #define TIC_TACt_TOE_MANAGER_H
+
 #include "tic_tac_toe_board.h"
 #include"tic_tac_toe_3.h"
 #include"tic_tac_toe_4.h"
 #include<memory>
 #include <string>
+
+
 enum GameType
 {
 	tic_tac_toe_3,
@@ -24,10 +27,8 @@ public:
 	void save_game(unique_ptr<TicTacToeBoard>baord);
 	friend ostream& operator<< (ostream& out, const TicTacToeManager & manager);
 
-	void run();
-
-		
 private:
+
 	void update_winner_count(std::string& winner);
 
 	vector <std::unique_ptr<TicTacToeBoard >>boards;

@@ -1,27 +1,34 @@
-#include"tic_tac_toe_board.h"
+#include "tic_tac_toe_manager.h"
 
 
 
-// bool TicTacToeBoard::game_over() 
-//{
-//	bool end_game = check_board_full() || check_column_win() || check_diagonal_win() || check_row_win();
-//	if (end_game)
-//	{
-//		if (check_board_full())
-//		{
-//			c_win++;
-//		}
-//		else if (next_player == "X")
-//		{
-//			o_win++;
-//		}
-//		else
-//		{
-//			x_win++;
-//		}
-//	}
-//	return end_game;
-//}
+
+bool TicTacToeBoard::game_over()
+{
+	bool end_game = check_board_full() || check_column_win() || check_diagonal_win() || check_row_win();
+	if (end_game)
+	{
+		if (check_board_full()) // if no win set winner to C
+		{
+
+			winner = "C";
+		}
+
+		else if (next_player == "X")
+		{
+
+			winner = "O";
+
+
+		}
+		else
+			winner = "X";
+
+
+	}
+	return end_game;
+}
+
 
 
 
@@ -29,6 +36,11 @@
  string TicTacToeBoard::get_player()const
  {
 	 return next_player;
+ }
+
+ string TicTacToeBoard::get_winner() const
+ {
+	 return winner;
  }
 
 
@@ -78,11 +90,9 @@ bool TicTacToeBoard::check_board_full()const
 //in operator overloard
 std::istream & operator>>(std::istream & in, TicTacToeBoard & board)
 {
-	int position;
-	cout << " Enter the postion: \n";
-	in >> position;
-	board.mark_board(position);
+	board.get_input(in);
 	return in;
+	
 
 }
 
@@ -90,15 +100,8 @@ std::istream & operator>>(std::istream & in, TicTacToeBoard & board)
 
 std::ostream & operator<<(std::ostream & out, const TicTacToeBoard & board)
 {
-	//while i is less then the size of the board we created  
-	//board is a instance of tic tac toe that has access to its member function
-	for (unsigned i = 0; i < board.pegs.size(); i += 3)
-	{
-		// mark the first postion on the board 
-		out << board.pegs[i].val << "|" << board.pegs[i + 1].val << "|" << board.pegs[i + 2].val << "|" << endl;
-		
-
-	}
+	board.display_board(out);
+	
 	return out;
 }
 
@@ -108,27 +111,6 @@ std::ostream & operator<<(std::ostream & out, const TicTacToeBoard & board)
 			
 
 		
-
-//
-//void TicTacToeBoard::start_game(std::string player)
-//{
-//	if (player == "X" || player == "O")
-//	{
-//		next_player = player;
-//	}
-//	
-//	
-//	clear_board();
-//	
-//}
-
-//void TicTacToeBoard::mark_board(int position)
-//{
-//	pegs[position - 1] = next_player;
-//	set_next_player();
-//	std::cout << "\n";
-//	display_board();
-//}
 
 
 

@@ -3,18 +3,33 @@
 unique_ptr<TicTacToeBoard> TicTacToeManager::get_game(GameType gametype)
 {
 	unique_ptr<TicTacToeBoard> a;
-	if(gametype==0)
+	if (gametype == 0)
 	{
 		a = make_unique<TicTacToe3>();
 	}
+	else 
+	{
+		a = make_unique<TicTacToe4>();
+	}
+		
+	
 	return a;
+
 }
 
-void TicTacToeManager::save_game(unique_ptr<TicTacToeBoard> baord)
-{
-}
 
-void TicTacToeManager::update_winner_count(std::string & winner)
+	
+	
+
+	
+	
+	
+
+	
+
+
+
+void TicTacToeManager::update_winner_count(std::string & winner) // set xwin o win or c win if conditions true
 {
 	if (winner == "X")
 	{
@@ -27,6 +42,8 @@ void TicTacToeManager::update_winner_count(std::string & winner)
 	}
 	else
 		c_win++;
+
+
 }
 
 
@@ -34,6 +51,12 @@ void TicTacToeManager::update_winner_count(std::string & winner)
 
 
 
+
+ostream & operator<<(ostream & out, const TicTacToeManager & manager)
+{
+	return (out);
+	// TODO: insert return statement here
+}
 
 
 
@@ -94,8 +117,8 @@ void TicTacToeManager::run()
 }
 
 	*/
- 
-ostream & operator<<(ostream & out, const TicTacToeManager & manager)
-{
-	// TODO: insert return statement here
-}
+// 
+//ostream & operator<<(ostream & out, const TicTacToeManager & manager)
+//{
+//	// TODO: insert return statement here
+//}
