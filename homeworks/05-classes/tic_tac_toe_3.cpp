@@ -48,15 +48,18 @@ bool TicTacToe3::check_column_win() const
 bool TicTacToe3:: check_row_win() const
 {
 
-	if ((pegs[0].val == "X" && pegs[1].val == "X" && pegs[2].val == "X") || (pegs[0].val == "O" && pegs[1].val == "O" && pegs[2].val == "O"))
+	if ((pegs[0].val == "X" && pegs[1].val == "X" && pegs[2].val == "X") ||
+            (pegs[0].val == "O" && pegs[1].val == "O" && pegs[2].val == "O"))
 	{
 		return true;
 	}
-	else if ((pegs[3].val == "X" && pegs[4].val == "X" && pegs[5].val == "X") || (pegs[3].val == "O" && pegs[4].val == "O" && pegs[5].val == "O"))
+	else if ((pegs[3].val == "X" && pegs[4].val == "X" && pegs[5].val == "X") || 
+                 (pegs[3].val == "O" && pegs[4].val == "O" && pegs[5].val == "O"))
 	{
 		return true;
 	}
-	else if ((pegs[6].val == "O" && pegs[7].val == "O" && pegs[8].val == "O") || (pegs[6].val == "O" && pegs[7].val == "O" && pegs[8].val == "O"))
+	else if ((pegs[6].val == "X" && pegs[7].val == "X" && pegs[8].val == "X") || 
+                 (pegs[6].val == "O" && pegs[7].val == "O" && pegs[8].val == "O"))
 	{
 		return true;
 	}
@@ -70,11 +73,13 @@ bool TicTacToe3:: check_row_win() const
 
 bool TicTacToe3::check_diagonal_win() const
 {
-	if (pegs[0].val == "X" && pegs[4].val == "X" && pegs[8].val == "X")
+	if (pegs[0].val == "X" && pegs[4].val == "X" && pegs[8].val == "X" ||
+            pegs[0].val == "O" && pegs[4].val == "O" && pegs[8].val == "O")
 	{
 		return true;
 	}
-	else if (pegs[2].val == "O" && pegs[4].val == "O" && pegs[6].val == "O")
+	else if (pegs[2].val == "O" && pegs[4].val == "O" && pegs[6].val == "O" ||
+                 pegs[2].val == "X" && pegs[4].val == "X" && pegs[6].val == "X")
 	{
 		return true;
 	}
