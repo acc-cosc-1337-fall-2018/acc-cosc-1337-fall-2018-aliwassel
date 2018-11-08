@@ -33,7 +33,7 @@ bool TicTacToe4::check_column_win() const
 	bool col_1, col_2, col_3, col_4;
 	// from 0 to 4 from 4 to 8 etc //4x4
 	// 1 col 1 4 8 12
-	col_1 = ((pegs[0].val == pegs[4].val) && (pegs[8].val == pegs[12].val) &&
+	col_1 = ((pegs[0].val == pegs[4].val && pegs[8].val == pegs[12].val) &&
 		      pegs[0].val != " " && pegs[12].val != " ");
 
 	col_2 = ((pegs[1].val == pegs[5].val && pegs[9].val == pegs[13].val) &&
@@ -49,7 +49,7 @@ bool TicTacToe4::check_column_win() const
 	{
 		return true;
 	}
-	else { return false; }
+	/*else { return false; }*/
 	
 }
 
@@ -64,10 +64,7 @@ bool TicTacToe4::check_diagonal_win() const
 	{
 		return true; 
 	}
-	else 
-	{
-		return false;
-	}
+	
 	
 }
 

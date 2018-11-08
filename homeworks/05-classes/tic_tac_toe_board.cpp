@@ -5,7 +5,7 @@
 
 bool TicTacToeBoard::game_over()
 {
-	bool end_game = check_board_full() || check_column_win() || check_diagonal_win() || check_row_win();
+	bool end_game = (check_board_full() || check_column_win() || check_diagonal_win() || check_row_win());
 	if (end_game)
 	{
 		if (check_board_full()) // if no win set winner to C

@@ -1,9 +1,14 @@
 #include "tic_tac_toe_manager.h"
 
+
 unique_ptr<TicTacToeBoard> TicTacToeManager::get_game(GameType gametype)
 {
 	unique_ptr<TicTacToeBoard> a;
-	if (gametype == 0)
+	cout << "Enter 0 to play tic tac 3  "<<endl;
+	cout << " Or 1 to play tic tac 4: ";
+
+
+	if (gametype ==tic_tac_toe_3)
 	{
 		a = make_unique<TicTacToe3>();
 	}
@@ -15,6 +20,14 @@ unique_ptr<TicTacToeBoard> TicTacToeManager::get_game(GameType gametype)
 	
 	return a;
 
+}
+
+void TicTacToeManager::save_game(unique_ptr<TicTacToeBoard> board)
+{
+	// we have too make unique_ptr of <TicTacToe>
+	
+
+	boards.push_back(move( board ));
 }
 
 
@@ -59,66 +72,52 @@ ostream & operator<<(ostream & out, const TicTacToeManager & manager)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*stream & operator<<(ostream & out, const TicTacToeManager & manager)
-{
-	TicTacToeBoard result;
-	for(auto board: manager.boards)
-	{
-		out << board;
-		result += board;
-	}
-	out << "Total Games played" << endl;
-	out << result;
-}
-
-
-
 void TicTacToeManager::run()
 {
+
 	int choice{ 1 };
 
 	do
 	{
-		TicTacToeBoard board;
-		string player;
-		cout << "Who goes first: X or O? " << endl;
-		cin >> player;
-		if (player == "X " || player == "O")
-		{
-			board.start_game(player);
+		int game;
+		std::cout << "What game 3 or 4: ";
+		std::cin >> game;
 
+		std::unique_ptr<TicTacToeBoard> board;
+
+		if (game == 3)
+		{
+			board = std::make_unique<TicTacToe3>();
 		}
 		else
-			cout << "Sorry! invalid entry try again: " << endl;
-		while (!board.game_over())
 		{
-			int position;
-			cout << "Player " << player << " Mark the board  ";
-			cin >> position;
-			board.mark_board(position);
-			board.display_board();
+			board = std::make_unique<TicTacToe4>();
 		}
-		cout << "Enter 1 to play again, or any other key to exit : ";
-		cin >> choice;
-		
-		
-	} while (choice==1);
+
+		std::string player;
+		std::cout << "Enter first player X or O: ";
+		std::cin >> player;
+
+		board->start_game(player);
+
+		while (!board->game_over())
+		{
+			std::cin >> *board;
+			std::cout << *board;
+		}
+
+		std::cout << "Enter 1 to play again, any other key to exit";
+		std::cin >> choice;
+
+	} while (choice == 1);
+
 }
 
-	*/
-// 
-//ostream & operator<<(ostream & out, const TicTacToeManager & manager)
-//{
-//	// TODO: insert return statement here
-//}
+
+
+
+
+
+
+
+
