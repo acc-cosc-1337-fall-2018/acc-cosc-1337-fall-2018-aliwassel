@@ -3,7 +3,7 @@
 
 TicTacToe3::TicTacToe3()
 {
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < 9; i++) // allocate 9 empty space in the vector of pegs 
 	{
 		Peg peg;
 		pegs.push_back(peg);
@@ -29,7 +29,7 @@ bool TicTacToe3::check_column_win() const
 
 
 	col_1 = ((pegs[0].val == pegs[3].val  && pegs[3].val == pegs[6].val) &&
-		pegs[0].val != " " && pegs[6].val != " ");
+		pegs[0].val != " " ); // can write it like this as well
 
 	col_2 = ((pegs[1].val == pegs[4].val && pegs[4].val == pegs[7].val)
 		&& pegs[1].val != " " && pegs[7].val != " ");
@@ -43,6 +43,8 @@ bool TicTacToe3::check_column_win() const
 	{
 		return true;
 	}
+	else
+		return false;
 
 }
 	
@@ -53,31 +55,23 @@ bool TicTacToe3::check_column_win() const
 
 bool TicTacToe3::check_row_win() const
 {
-	for (int i = 0; i < 9; i += 3)
-	{
-		if (pegs[i].val == pegs[i + 1].val && pegs[i + 1].val == pegs[i + 2].val &&
-			pegs[i + 2].val != " ")
-			return true;
-	}
+	bool row_1, row_2, row_3;
+		row_1 = ((pegs[0].val == pegs[1].val && pegs[2].val == pegs[3].val) &&
+			pegs[0].val != " " && pegs[3].val != " ");
+	row_2 = ((pegs[4].val == pegs[5].val && pegs[6].val == pegs[7].val) &&
+		pegs[4].val != " " && pegs[7].val != " ");
+	row_3 = (pegs[7].val == pegs[8].val && pegs[7].val != " " && pegs[8].val != " ");
 
-	return false;
+	if (row_1 || row_2 || row_3) { return true; }
+	else
+	{
+		return false;
+	}
+	else return false;
 }
 
-//bool TicTacToe3::check_row_win() const
-//{
-//	bool row_1, row_2, row_3;
-//		row_1 = ((pegs[0].val == pegs[1].val && pegs[2].val == pegs[3].val) &&
-//			pegs[0].val != " " && pegs[3].val != " ");
-//	row_2 = ((pegs[4].val == pegs[5].val && pegs[6].val == pegs[7].val) &&
-//		pegs[4].val != " " && pegs[7].val != " ");
-//	row_3 = ((pegs[8].val == pegs[9].val && pegs[8].val != " " && pegs[9].val != " "));
-//
-//	if (row_1 || row_2 || row_3) { return true; }
-//	else
-//	{
-//		return false;
-//	}
-//}
+
+
 
 bool TicTacToe3::check_diagonal_win() const
 {
@@ -104,7 +98,7 @@ bool TicTacToe3::check_diagonal_win() const
 void TicTacToe3::get_input(istream & in)
 {
 	int position;
-	cout << "player " << get_player() << "  Enter a position :  ";
+	cout << "player "  << get_player()<< "  Enter a position :  ";
 	in >> position;
 	mark_board(position);
 }

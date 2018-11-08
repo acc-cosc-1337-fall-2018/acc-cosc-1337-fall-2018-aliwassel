@@ -1,6 +1,6 @@
 #include"tic_tac_toe_4.h"
 
-TicTacToe4::TicTacToe4()
+TicTacToe4::TicTacToe4() // allocate 16 empty space of pegs 
 {
 	for (int i=0; i<16; i++)
 	{
@@ -49,7 +49,7 @@ bool TicTacToe4::check_column_win() const
 	{
 		return true;
 	}
-	/*else { return false; }*/
+	else { return false; }
 	
 }
 
@@ -92,7 +92,7 @@ bool TicTacToe4::check_row_win() const
 void TicTacToe4::get_input(istream & in)
 {
 	int position;
-	cout << "\nEnter you positon on board: " << endl;
+	cout << "Player"<<get_player()<< "\nEnter you positon on board: " ;
 	in >> position;
 	mark_board(position);
 

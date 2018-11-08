@@ -26,7 +26,7 @@ public:
 	friend ostream& operator<<(std::ostream& o, const TicTacToeBoard& board);
 	friend istream & operator>>(istream& in, TicTacToeBoard & b);
 
-	// function that take the operator as argument? 
+	
 
 	/*virtual void print(ostream& out) const = 0*/;
 	// function takes the istream as argument 
@@ -38,7 +38,7 @@ protected:
 	virtual bool check_diagonal_win() const =0;
 	virtual void display_board(ostream& o ) const = 0;
 	virtual bool check_row_win() const =0;
-	virtual void get_input(std::istream & in) = 0;
+	virtual void get_input(std::istream & in) = 0; // function that take the operator as argument? 
 	bool check_board_full() const;
 	void clear_board();
 
