@@ -60,10 +60,12 @@ bool TicTacToe4::check_diagonal_win() const
 		      pegs[0].val != " " && pegs[15].val != " ");
 	dia_2 = ((pegs[3].val == pegs[6].val && pegs[9].val == pegs[12].val) &&
 		      pegs[3].val != " " && pegs[12].val != " ");
-	if (dia_1 || dia_2) 
+	if (dia_1 || dia_2)
 	{
-		return true; 
+		return true;
 	}
+	else
+		return false;
 	
 	
 }
@@ -92,7 +94,7 @@ bool TicTacToe4::check_row_win() const
 void TicTacToe4::get_input(istream & in)
 {
 	int position;
-	cout << "Player"<<get_player()<< "\nEnter you positon on board: " ;
+	cout << " Player "<<get_player()<<  " Enter you positon on board: " ;
 	in >> position;
 	mark_board(position);
 

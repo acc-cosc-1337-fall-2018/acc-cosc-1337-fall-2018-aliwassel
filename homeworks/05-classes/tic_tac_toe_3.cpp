@@ -62,12 +62,15 @@ bool TicTacToe3::check_row_win() const
 		pegs[4].val != " " && pegs[7].val != " ");
 	row_3 = (pegs[7].val == pegs[8].val && pegs[7].val != " " && pegs[8].val != " ");
 
-	if (row_1 || row_2 || row_3) { return true; }
+	if (row_1 || row_2 || row_3)
+	{ 
+		return true; 
+	}
 	else
 	{
 		return false;
 	}
-	else return false;
+	
 }
 
 
