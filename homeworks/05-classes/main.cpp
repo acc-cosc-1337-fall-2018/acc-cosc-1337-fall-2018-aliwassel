@@ -5,10 +5,11 @@
 #include"tic_tac_toe_manager.h"
 #include<iostream>
 #include<string>
+#include<memory>
 
 int main()
 {
-	unique_ptr<TicTacToeManager> manager = make_unique<TicTacToeManager>();
+	unique_ptr<TicTacToeManager> manager;
 	GameType to_play;
 
 	int choice{ 1 };
@@ -52,7 +53,7 @@ int main()
 			std::cin >> *board;// is either tic tac 3  or tic tac 4 
 			std::cout << *board;
 		}
-		manager->save_game(move(board));
+		manager->save_game(std::move(board));
 
 
 		// determine who won 
@@ -65,9 +66,11 @@ int main()
 		std::cin >> choice;
 
 	} while (choice == 1);
+
+
 	cout << *manager;
 	
-	system("pause");
+	
 
 
 

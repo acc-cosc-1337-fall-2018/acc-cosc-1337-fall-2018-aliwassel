@@ -64,7 +64,7 @@ void TicTacToeManager::update_winner_count(std::string & winner) // set xwin o w
 
 
 
-ostream & operator<<(ostream & out, const TicTacToeManager & manager)
+ostream & operator<<(ostream & out, TicTacToeManager & manager)
 {
 	out << " Games played" << endl;
 	for (int i =0; i<manager.boards.size(); i++)
