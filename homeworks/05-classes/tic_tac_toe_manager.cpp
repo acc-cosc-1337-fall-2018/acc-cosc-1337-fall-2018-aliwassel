@@ -129,12 +129,13 @@ void TicTacToeManager::run()
 		
 		cout << "The winner is :" << board->get_winner() << endl<< endl;
 		//save the game use the move function
-		manager.save_game(move(board));
+		manager->save_game(move(board));
 		std::cout << "Enter 1 to play again, any other key to exit" << endl;
+		
 		std::cin >> choice;
 
 	} while (choice == 1);
-
+	out << board;
 }
 
 
