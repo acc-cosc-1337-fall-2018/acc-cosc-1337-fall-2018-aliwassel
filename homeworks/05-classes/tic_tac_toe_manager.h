@@ -20,7 +20,7 @@ class TicTacToeManager
 public:
 	TicTacToeManager() = default;
 	TicTacToeManager(int x, int o, int c) : x_win{ x }, o_win(o), c_win(c){};
-	void run();
+	
 
 	unique_ptr <TicTacToeBoard> get_game(GameType gametype);
 
