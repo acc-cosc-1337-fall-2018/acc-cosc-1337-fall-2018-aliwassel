@@ -17,7 +17,7 @@ class TicTacToeBoard
 	
 public:
 	TicTacToeBoard() = default;
-	
+	std::vector <Peg> get_pegs();
 	bool game_over();
 	void start_game(string player) { next_player = player; clear_board(); }
 	void mark_board(const int position) { pegs[position - 1].val = next_player; set_next_player();}

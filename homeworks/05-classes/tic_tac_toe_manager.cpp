@@ -1,6 +1,11 @@
 #include "tic_tac_toe_manager.h"
 
 
+vector<unique_ptr<TicTacToeBoard>> TicTacToeManager::get_games()
+{
+	return boards;
+}
+
 unique_ptr<TicTacToeBoard> TicTacToeManager::get_game(GameType gametype)
 {
 	unique_ptr<TicTacToeBoard> a;

@@ -18,6 +18,8 @@ enum GameType
 class TicTacToeManager
 {
 public:
+	vector<unique_ptr<TicTacToeBoard>> get_games();
+
 	TicTacToeManager() = default;
 	TicTacToeManager(int x, int o, int c) : x_win{ x }, o_win(o), c_win(c){};
 	

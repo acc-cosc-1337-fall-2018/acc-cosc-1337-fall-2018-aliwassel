@@ -1,5 +1,12 @@
 #include "panel.h"
 
+
+
+
+//void Panel::Panel(wxWindow* parent) : wxPanel(parent, -1)
+//void Panel::on_start_button_click(wxCommandEvent& event)
+
+
 Panel::Panel(wxWindow* parent) : wxPanel(parent, -1)
 {/*
 	auto vbox = new wxBoxSizer(wxVERTICAL);
