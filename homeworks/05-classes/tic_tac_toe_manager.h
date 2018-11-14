@@ -1,12 +1,11 @@
 #ifndef TIC_TAC_TOE_MANAGER_H
 #define TIC_TACt_TOE_MANAGER_H
 
-#include "tic_tac_toe_board.h"
+#include"tic_tac_toe_board.h"
 #include"tic_tac_toe_3.h"
 #include"tic_tac_toe_4.h"
 #include<memory>
 #include <string>
-
 
 enum GameType
 {
@@ -18,10 +17,10 @@ enum GameType
 class TicTacToeManager
 {
 public:
-	vector<unique_ptr<TicTacToeBoard>> get_games();
-
 	TicTacToeManager() = default;
-	TicTacToeManager(int x, int o, int c) : x_win{ x }, o_win(o), c_win(c){};
+	
+	vector<unique_ptr<TicTacToeBoard>> get_games();
+	
 	
 
 	unique_ptr <TicTacToeBoard> get_game(GameType gametype);
