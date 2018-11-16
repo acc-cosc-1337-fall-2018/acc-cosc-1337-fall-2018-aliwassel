@@ -19,7 +19,7 @@ class TicTacToeManager
 public:
 	TicTacToeManager() = default;
 	
-	vector<unique_ptr<TicTacToeBoard>> get_games();
+	const vector<unique_ptr<TicTacToeBoard>> & get_games();
 	
 	
 

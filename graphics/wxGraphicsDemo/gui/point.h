@@ -6,7 +6,7 @@ class Point
 	
 public:
 	Point(int x a, int b) : x(a), y(b) {}
-
+	
 	int x;
 	int y;
 

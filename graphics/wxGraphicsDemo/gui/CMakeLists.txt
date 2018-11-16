@@ -14,7 +14,7 @@ if(wxWidgets_FOUND)
 
 	set(SOURCE_FILES main.cpp app.h app.cpp frame.h frame.cpp 
 	                 panel.h panel.cpp point.h shape.h shape.cpp 
-					 text.h text.cpp circle.h circle.cpp)
+					 text.h text.cpp circle.h circle.cpp rectangle.h rectangle.cpp)
 	
 	add_executable(graphics_exe WIN32 ${SOURCE_FILES})
 	target_link_libraries(graphics_exe ${wxWidgets_LIBRARIES})

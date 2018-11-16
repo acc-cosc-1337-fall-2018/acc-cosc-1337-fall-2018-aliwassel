@@ -1,6 +1,6 @@
 #include "panel.h"
 #include"tic_tac_toe_board.h"
-
+#include<memory>
 
 /*
 Class Constructor
@@ -126,23 +126,24 @@ void Panel::on_start_button_click(wxCommandEvent & event)
 	if (game_type_radio->GetSelection() == 0) 
 	{
 		board=manager->get_game(tic_tac_toe_3);
-		auto mrk_borad = board->get_pegs;
+		auto v = board->get_pegs();
 
 		//2) Gets a tic tac toe game from the TicTacToeManager class using the GameType enumeration
 		//tic_tac_toe_3 or tic_tac_toe_4 options.STUDENT MUST WRITE CODE FOR THIS
 
 		tic_tac_toe_grid_4->Show(false);
 		tic_tac_toe_grid_3->Show(true);
+
 	}
 	else if (game_type_radio->GetSelection() == 1)
 	{
 		board = manager->get_game(tic_tac_toe_4);
-		auto mrk_board = board->get_pegs;
+		auto mrk_board = board->get_pegs();
 
 
 		//3) Gets a tic tac toe game from the TicTacToeManager class using the GameType enumeration
 		//tic_tac_toe_3 or tic_tac_toe_4 options.STUDENT MUST WRITE CODE FOR THIS
-
+	
 		tic_tac_toe_grid_3->Show(false);
 		tic_tac_toe_grid_4->Show(true);
 	}
@@ -152,14 +153,15 @@ void Panel::on_start_button_click(wxCommandEvent & event)
 	//if radio button selection 0 call the board start game function with X or O
 	
 	auto btn = dynamic_cast<wxButton*>(event.GetEventObject());
-	auto check_for_player = "X" || "O";
-	if (first_player_radio->GetSelection()==check_for_player)
+	  const auto check_for_player = "X" || "O";
+
+	if (first_player_radio->GetSelection()==0)
 	{
-		board->start_game(std::to_string(check_for_player));
+		board->start_game("X");
 
 
 	}
-	else if (first_player_radio->GetSelection()==0)
+	else if (first_player_radio->GetSelection()==check_for_player)
 	{
 		board->start_game("X");
 
@@ -187,7 +189,7 @@ void Panel::on_peg_button_click(wxCommandEvent & event)
 	btn->Disable();
 	auto val = btn->GetLabel();
 	btn->SetLabel(board->get_player());
-	board->mark_board(std::stoi(val.ToStdString()));
+	board->mark_board(std::stoi(val.ToStdString())); // conversion of gui string 
 
 	if (board->game_over()) 
 	{

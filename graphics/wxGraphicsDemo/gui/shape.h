@@ -15,9 +15,10 @@ public:
 
 
 
-protected :
+protected:
 
-	wxDC* device_content;
+	wxDC* device_context;
 };
+
 
 #endif // SHAPE_H
