@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
 	unique_ptr<TicTacToeManager> manager;
-	GameType to_play;
+	
 	string play_again;
 	int choice{ 1 };
 	std::string player;
@@ -30,10 +30,10 @@ int main()
 		cin >> game;
 		if (game == 0)
 		{
-			auto a = tic_tac_toe_3;
+			 a = tic_tac_toe_3;
 		}
 		else
-			auto a = tic_tac_toe_4;
+			 a = tic_tac_toe_4;
 
 		//start the game 
 		board = manager->get_game(a);
