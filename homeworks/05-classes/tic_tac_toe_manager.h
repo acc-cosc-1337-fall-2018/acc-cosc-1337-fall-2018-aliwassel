@@ -32,7 +32,7 @@ private:
 
 	void update_winner_count(std::string& winner);
 
-	vector <std::unique_ptr<TicTacToeBoard >>boards;
+	 vector <std::unique_ptr<TicTacToeBoard >>boards;
 	
 	int x_win{ 0 }, o_win{ 0 }, c_win{ 0 };
 

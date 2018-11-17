@@ -222,7 +222,7 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 {
 
 
-	history_list_box->GetSelections();
+	
 	const auto append_pegs = board->get_pegs();
 	
 
@@ -230,14 +230,18 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 	
 
 	//1) Write code to get a const reference to a vector of boards by calling the manager get_games function
+		
 		const auto append_history = manager->get_games();
 
 	//2) Write code get a const reference to one board using the history_list_box GetSelection function as 
 	//   the index for the boards vector
-
-		history_list_box->GetSelection();
-		history_list_box->Append();
+		
+		append_history[history_list_box->GetSelection()];
+		
 	
+		
+
+		
 	wxGridSizer* sizer;
 
 	if (board->get_pegs().size() == 9) 
@@ -263,7 +267,8 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 	}
 
 	//5)Write code to set the winner_text value to the board get_winner function
-	board->get_winner();
+	/*wxMessageBox(wxT("The Winner is: ")); 
+	board->get_winner;*/
 
 }
 
