@@ -26,7 +26,7 @@ public:
 	unique_ptr <TicTacToeBoard> get_game(GameType gametype);
 
 	void save_game(unique_ptr<TicTacToeBoard>board);
-	friend ostream& operator<< (ostream& out,  TicTacToeManager & manager);
+	friend ostream& operator<< (ostream& out,  const TicTacToeManager & manager);
 
 private:
 
