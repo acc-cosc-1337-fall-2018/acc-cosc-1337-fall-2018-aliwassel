@@ -126,7 +126,6 @@ void Panel::on_start_button_click(wxCommandEvent & event)
 	if (game_type_radio->GetSelection() == 0) 
 	{
 		board=manager->get_game(tic_tac_toe_3);
-		const auto v = board->get_pegs();
 
 		//2) Gets a tic tac toe game from the TicTacToeManager class using the GameType enumeration
 		//tic_tac_toe_3 or tic_tac_toe_4 options.STUDENT MUST WRITE CODE FOR THIS
@@ -138,7 +137,6 @@ void Panel::on_start_button_click(wxCommandEvent & event)
 	else if (game_type_radio->GetSelection() == 1)
 	{
 		board = manager->get_game(tic_tac_toe_4);
-		const auto mrk_board = board->get_pegs();
 
 
 		//3) Gets a tic tac toe game from the TicTacToeManager class using the GameType enumeration
@@ -158,7 +156,7 @@ void Panel::on_start_button_click(wxCommandEvent & event)
 	if (first_player_radio->GetSelection()==0)
 	{
 		
-		board->start_game(board->get_player());
+		board->start_game("X");
 		
 
 	}
@@ -223,7 +221,6 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 
 
 	
-	const auto append_pegs = board->get_pegs();
 	
 
 	
@@ -231,12 +228,12 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 
 	//1) Write code to get a const reference to a vector of boards by calling the manager get_games function
 		
-		const auto append_history = manager->get_games();
+		const auto& append_history = manager->get_games();
 
 	//2) Write code get a const reference to one board using the history_list_box GetSelection function as 
 	//   the index for the boards vector
 		
-		append_history[history_list_box->GetSelection()];
+		const auto& board = append_history[history_list_box->GetSelection()];
 		
 	
 		
@@ -269,7 +266,7 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 	//5)Write code to set the winner_text value to the board get_winner function
 	/*wxMessageBox(wxT("The Winner is: ")); 
 	board->get_winner;*/
-
+	winner_text->SetValue(board->get_winner());
 }
 
 /*
