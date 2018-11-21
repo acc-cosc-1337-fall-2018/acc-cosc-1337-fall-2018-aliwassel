@@ -4,7 +4,7 @@ TicTacToe4::TicTacToe4() // allocate 16 empty space of pegs
 {
 	for (int i=0; i<16; i++)
 	{
-		Peg peg;
+		Peg(peg);
 		pegs.push_back(peg);
 	}
 }

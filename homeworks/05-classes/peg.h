@@ -5,8 +5,19 @@
 class Peg
 {
 public:
-	Peg() { val = " "; }
+
+
+	Peg() = default;
+
+
+	Peg(std::string v): val(v) {} 
+	
+
+
+	
 	std::string val;
+
+
 
 };
 #endif // !TIC_TAC_TOE_PEG_H
