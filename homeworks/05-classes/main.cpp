@@ -34,10 +34,15 @@ int main()
 		cin >> game;
 		if (game == 0)
 		{
-			 a = tic_tac_toe_3;
+			 a= tic_tac_toe_3;
 		}
-		else
-			 a = tic_tac_toe_4;
+		else if (game = 1) 
+		
+		{
+			a = tic_tac_toe_4;
+
+		}
+			
 
 		//start the game 
 		board = manager->get_game(a);
@@ -87,6 +92,7 @@ int main()
 		while (!board->game_over())
 		{
 			cin >> *board;
+
 			cout << *board;
 
 		}

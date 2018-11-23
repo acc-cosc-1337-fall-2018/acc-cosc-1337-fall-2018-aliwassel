@@ -57,8 +57,13 @@ void TicTacToeManager::update_winner_count(std::string & winner) // set xwin o w
 		o_win++;
 
 	}
-	else
+	else 
+
+	{
 		c_win++;
+
+	}
+		
 
 
 }
