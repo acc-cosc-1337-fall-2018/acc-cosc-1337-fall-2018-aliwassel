@@ -1,5 +1,6 @@
 #include"tic_tac_toe_4.h"
 
+
 TicTacToe4::TicTacToe4() // allocate 16 empty space of pegs 
 {
 	for (int i=0; i<16; i++)
@@ -26,8 +27,13 @@ void TicTacToe4::display_board(ostream & out) const
 }
 
 
+//
+//TicTacToe4::TicTacToe4(vector<Peg> p):TicTacToeBoard(p)
+//{
+//
+//}
 
-bool TicTacToe4::check_column_win() const 
+bool TicTacToe4::check_column_win() const
 
 {
 	bool col_1, col_2, col_3, col_4;

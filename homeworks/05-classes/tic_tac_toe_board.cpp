@@ -3,9 +3,13 @@
 
 
 
-TicTacToeBoard::TicTacToeBoard(vector<Peg> p)
+TicTacToeBoard::TicTacToeBoard(vector<Peg> p) 
 {
-
+	for (int i = 0; i < p.size(); i++) 
+	{
+		
+		pegs.push_back(p[i]);
+	}
 }
 
 const std::vector<Peg> TicTacToeBoard::get_pegs()
