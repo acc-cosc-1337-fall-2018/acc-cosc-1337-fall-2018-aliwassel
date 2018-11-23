@@ -4,7 +4,11 @@
 #include"tic_tac_toe_board.h"
 #include"tic_tac_toe_3.h"
 #include"tic_tac_toe_4.h"
+#include"tic_tac_toe_data.h"
+
+
 #include<memory>
+
 #include <string>
 
 enum GameType
@@ -18,6 +22,8 @@ class TicTacToeManager
 {
 public:
 	TicTacToeManager() = default;
+
+	void get_winner_totals(int& x, int & o, int& c);
 	
 	const vector<unique_ptr<TicTacToeBoard>> & get_games();
 	
@@ -36,6 +42,7 @@ private:
 	
 	int x_win{ 0 }, o_win{ 0 }, c_win{ 0 };
 
+	TicTacToeData privt_Data;
 	
 
 };

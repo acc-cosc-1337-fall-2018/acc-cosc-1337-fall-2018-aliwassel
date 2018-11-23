@@ -1,5 +1,20 @@
 #include "tic_tac_toe_manager.h"
 
+TicTacToeManager::TicTacToeManager() 
+{
+	for (auto & p_data: privt_Data.get_games())
+	{
+		update_winner_count(p_data->get_winner());
+		boards.push_back(move(p_data));
+	}
+}
+void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
+{
+	x = x_win;
+	o = o_win;
+	c = c_win;
+	
+}
 
 const vector<unique_ptr<TicTacToeBoard>>& TicTacToeManager::get_games()
 {
@@ -57,12 +72,13 @@ void TicTacToeManager::update_winner_count(std::string & winner) // set xwin o w
 		o_win++;
 
 	}
-	else 
-
+	else if (winner=="C")
 	{
 		c_win++;
 
 	}
+
+	
 		
 
 
