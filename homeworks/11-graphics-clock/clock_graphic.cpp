@@ -10,7 +10,7 @@ ClockGraphic::ClockGraphic(wxDC* dc, Point s, Point e)
 	width = w.GetWidth();
 
 
-
+	
 
 }
 

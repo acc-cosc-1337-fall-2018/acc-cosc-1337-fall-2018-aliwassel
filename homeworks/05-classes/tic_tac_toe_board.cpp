@@ -3,6 +3,11 @@
 
 
 
+TicTacToeBoard::TicTacToeBoard(vector<Peg> p)
+{
+
+}
+
 const std::vector<Peg> TicTacToeBoard::get_pegs()
 {
 	return pegs;
