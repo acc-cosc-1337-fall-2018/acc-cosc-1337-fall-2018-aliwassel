@@ -5,21 +5,22 @@ vector<unique_ptr<TicTacToeBoard>> TicTacToeData::get_games()
 	vector <unique_ptr<TicTacToeBoard>> boards;
 	
 	streampos get_line;
+	
 	string line;
 	while (tic_tac_toe_file.is_open())
 	{
+		
 		vector<Peg> pegs_ch;
 
+		getline(tic_tac_toe_file, line);
+		 
 		get_line = tic_tac_toe_file.tellg();
 		tic_tac_toe_file.seekg(0, ios::end);
 		for (int i = 0; i < get_line; i++)
 		{
 			
-			while (getline(tic_tac_toe_file, line))
-			{
-				cout << line << endl;
-
-			}
+			getline(tic_tac_toe_file, line);
+			
 
 		}
 		Peg(line);
@@ -52,9 +53,10 @@ vector<unique_ptr<TicTacToeBoard>> TicTacToeData::get_games()
 
 void TicTacToeData::save_pegs(const std::vector<Peg>& pegs)
 {
-	
+	tic_tac_toe_file << endl;
 	for (const auto& pegs : pegs) 
 	{
+
 		tic_tac_toe_file<< pegs.val; 
 	}
 	tic_tac_toe_file << "\n";

@@ -2,7 +2,7 @@
 #define CLOCK_H
 #include <chrono>
 #include <string>
-
+using namespace std;
 class Clock
 {
 public:

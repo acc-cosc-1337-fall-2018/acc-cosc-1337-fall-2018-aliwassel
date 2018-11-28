@@ -5,10 +5,7 @@
 #include"tic_tac_toe_3.h"
 #include"tic_tac_toe_4.h"
 #include"tic_tac_toe_data.h"
-
-
 #include<memory>
-
 #include <string>
 
 enum GameType
@@ -21,8 +18,8 @@ enum GameType
 class TicTacToeManager
 {
 public:
-	TicTacToeManager() = default;
-
+	TicTacToeManager();
+	
 	void get_winner_totals(int& x, int & o, int& c);
 	
 	const vector<unique_ptr<TicTacToeBoard>> & get_games();
@@ -38,11 +35,11 @@ private:
 
 	void update_winner_count(std::string& winner);
 
-	 vector <std::unique_ptr<TicTacToeBoard >>boards;
+	 vector <unique_ptr<TicTacToeBoard >>boards;
 	
 	int x_win{ 0 }, o_win{ 0 }, c_win{ 0 };
 
-	TicTacToeData privt_Data;
+	 TicTacToeData private_data;
 	
 
 };

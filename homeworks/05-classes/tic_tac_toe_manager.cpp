@@ -2,12 +2,19 @@
 
 TicTacToeManager::TicTacToeManager() 
 {
-	for (auto & p_data: privt_Data.get_games())
+	for (auto & p_data: private_data.get_games())
 	{
 		update_winner_count(p_data->get_winner());
 		boards.push_back(move(p_data));
 	}
 }
+
+
+//
+//TicTacToeManager::TicTacToeManager(TicTacToeData private_data)
+//{
+//}
+
 void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
 {
 	x = x_win;
@@ -18,6 +25,7 @@ void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
 
 const vector<unique_ptr<TicTacToeBoard>>& TicTacToeManager::get_games()
 {
+	
 	return boards;
 }
 
@@ -44,7 +52,9 @@ unique_ptr<TicTacToeBoard> TicTacToeManager::get_game(GameType gametype)
 void TicTacToeManager::save_game(unique_ptr<TicTacToeBoard> board)
 {
 	update_winner_count(board->get_winner());// board=winner 
-	
+
+	// save pegs to the private data 
+	private_data.save_pegs(board->get_pegs());
 
 	boards.push_back(move( board ));// save winner to vec of unique_ptr
 }
