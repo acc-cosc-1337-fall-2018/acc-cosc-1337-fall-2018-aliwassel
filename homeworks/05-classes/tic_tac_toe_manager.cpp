@@ -1,19 +1,16 @@
 #include "tic_tac_toe_manager.h"
 
-TicTacToeManager::TicTacToeManager() 
-{
-	for (auto & p_data: private_data.get_games())
-	{
-		update_winner_count(p_data->get_winner());
-		boards.push_back(move(p_data));
-	}
-}
-
-
-//
-//TicTacToeManager::TicTacToeManager(TicTacToeData private_data)
+//TicTacToeManager::TicTacToeManager() 
 //{
+//	for (auto & p_data: private_data.get_games())
+//	{
+//		update_winner_count(p_data->get_winner());
+//		boards.push_back(move(p_data));
+//	}
 //}
+
+
+
 
 void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
 {

@@ -1,5 +1,5 @@
 #include "panel.h"
-#include"tic_tac_toe_board.h"
+
 #include<memory>
 
 /*
@@ -10,8 +10,7 @@ STUDENT MUST WRITE CODE FOR THIS
 
 @param wxWindow* the parent window for the Panel class
 */
-Panel::Panel(wxWindow* parent) 
-	: wxPanel(parent, -1)
+Panel::Panel(wxWindow* parent) : wxPanel(parent, -1)
 {
 	//Create an instance of unique_ptr<TicTacToeManager> using std::make_unique 
 	manager = make_unique<TicTacToeManager>();
@@ -30,7 +29,7 @@ Panel::Panel(wxWindow* parent)
 	vbox->Add(mid_horizontal_box, 0, wxEXPAND | wxLEFT | wxRIGHT | wxTOP, 10);
 	vbox->Add(tic_tac_toe_grid_3, 0, wxALIGN_RIGHT | wxTOP | wxRIGHT | wxBOTTOM, 10);
 	vbox->Add(tic_tac_toe_grid_4, 0, wxALIGN_RIGHT | wxTOP | wxRIGHT | wxBOTTOM, 10);
-	set_winner_labels();
+	void set_winner_labels();
 	SetSizer(vbox);
 }
 

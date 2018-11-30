@@ -29,11 +29,12 @@ vector<unique_ptr<TicTacToeBoard>> TicTacToeData::get_games()
 
 		unique_ptr<TicTacToeBoard>board;
 		
-		if (pegs_ch.size() == 9) 
+		if (pegs_ch.size() == 9)
 		{
-			board=make_unique<TicTacToe3>(pegs_ch);
+			board = make_unique<TicTacToe3>(pegs_ch);
 		}
-		else
+
+		else 
 		{
 			board=make_unique<TicTacToe4>(pegs_ch);
 		}

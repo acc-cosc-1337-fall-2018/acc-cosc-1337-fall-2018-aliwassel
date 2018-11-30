@@ -18,7 +18,8 @@ enum GameType
 class TicTacToeManager
 {
 public:
-	TicTacToeManager();
+	TicTacToeManager()=default;
+	TicTacToeManager(TicTacToeData private_data);
 	
 	void get_winner_totals(int& x, int & o, int& c);
 	
