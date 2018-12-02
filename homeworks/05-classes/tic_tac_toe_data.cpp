@@ -7,7 +7,7 @@ vector<unique_ptr<TicTacToeBoard>> TicTacToeData::get_games()
 	
 	fstream outfile(tic_tac_toe_file);
 	string line;
-	while (tic_tac_toe_file.is_open())
+	if(tic_tac_toe_file.is_open())
 	{
 		while (getline(outfile, line))
 		{
@@ -20,10 +20,7 @@ vector<unique_ptr<TicTacToeBoard>> TicTacToeData::get_games()
 			}
 
 		}
-
 		
-		
-
 		unique_ptr<TicTacToeBoard>board;
 		
 		if (pegs_ch.size() == 9)

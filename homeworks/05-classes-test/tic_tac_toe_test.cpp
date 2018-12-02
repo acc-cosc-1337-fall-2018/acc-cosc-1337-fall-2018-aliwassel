@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "tic_tac_toe_board.h"
 #include "tic_tac_toe_3.h"
+#include "tic_tac_toe_data.h"
 
 
 TEST_CASE("Test configuration", "config") {
@@ -45,6 +46,10 @@ TEST_CASE("Test win by first column", "[X wins first column]")
 	board.mark_board(7);//X
 	//X wins
 	REQUIRE(board.game_over() == true);
+
+	TicTacToeData data;
+	const std::vector<Peg>& pegs = board.get_pegs();
+	data.save_pegs(pegs);
 }
 
 TEST_CASE("Test win by second column", "[X wins second column]")
@@ -60,6 +65,11 @@ TEST_CASE("Test win by second column", "[X wins second column]")
 	board.mark_board(8);
 
 	REQUIRE(board.game_over() == true);
+
+	TicTacToeData data;
+	const std::vector<Peg>& pegs = board.get_pegs();
+	data.save_pegs(pegs);
+
 }
 
 TEST_CASE("Test win by third column", "[X wins third column]")
@@ -75,6 +85,11 @@ TEST_CASE("Test win by third column", "[X wins third column]")
 	board.mark_board(9);
 
 	REQUIRE(board.game_over() == true);
+
+	TicTacToeData data;
+	const std::vector<Peg>& pegs = board.get_pegs();
+	data.save_pegs(pegs);
+
 }
 
 TEST_CASE("Test win by first row", "[X wins first row]")
@@ -90,6 +105,10 @@ TEST_CASE("Test win by first row", "[X wins first row]")
 	board.mark_board(3);
 
 	REQUIRE(board.game_over() == true);
+	TicTacToeData data;
+	const std::vector<Peg>& pegs = board.get_pegs();
+	data.save_pegs(pegs);
+	data.get_games();
 }
 
 TEST_CASE("Test win by second row", "[X wins second row]")
