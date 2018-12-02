@@ -14,6 +14,6 @@ public:
 	void save_pegs(const std::vector <Peg>& pegs);
 private:
 	vector<string> pegs;
-	fstream tic_tac_toe_file{ "tic_tac_toe.dat" , ios::in | ios::out| ios::app };
+	string  tic_tac_toe_file{ "tic_tac_toe.dat" );
 };
 #endif // !TIC_TAC_TOE_DATA_H

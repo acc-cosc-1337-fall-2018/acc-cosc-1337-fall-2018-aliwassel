@@ -4,44 +4,43 @@ vector<unique_ptr<TicTacToeBoard>> TicTacToeData::get_games()
 {
 	vector <unique_ptr<TicTacToeBoard>> boards;
 	
-	streampos get_line;
 	
+	fstream outfile(tic_tac_toe_file);
 	string line;
 	while (tic_tac_toe_file.is_open())
 	{
-		
-		vector<Peg> pegs_ch;
-
-		getline(tic_tac_toe_file, line);
-		 
-		get_line = tic_tac_toe_file.tellg();
-		tic_tac_toe_file.seekg(0, ios::end);
-		for (int i = 0; i < get_line; i++)
+		while (getline(outfile, line))
 		{
-			
-			getline(tic_tac_toe_file, line);
-			
+			vector <Peg> pegs_out;
+			for auto(c: line) 
+			{
+				string get_character(1, ch);
+				pegs.push_back(Peg(get_character));
+					
+			}
 
 		}
-		Peg(line);
-		pegs_ch.push_back(line);
-		/*boards->get_pegs().(line.val);*/
+
+		
+		
 
 		unique_ptr<TicTacToeBoard>board;
 		
 		if (pegs_ch.size() == 9)
 		{
-			board = make_unique<TicTacToe3>(pegs_ch);
+			board=make_unique <TicTacToe3>(pegs));
+			
 		}
 
 		else 
 		{
+			
 			board=make_unique<TicTacToe4>(pegs_ch);
 		}
 
 		boards.push_back(move(board));
 
-		return boards;
+	
 	
 	}
 	
@@ -54,7 +53,8 @@ vector<unique_ptr<TicTacToeBoard>> TicTacToeData::get_games()
 
 void TicTacToeData::save_pegs(const std::vector<Peg>& pegs)
 {
-	tic_tac_toe_file << endl;
+	ofstream in_file(tic_tac_toe_file, ios::app);
+	
 	for (const auto& pegs : pegs) 
 	{
 

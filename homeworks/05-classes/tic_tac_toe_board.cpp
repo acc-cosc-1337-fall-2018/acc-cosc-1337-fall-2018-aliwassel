@@ -3,7 +3,10 @@
 
 
 
-TicTacToeBoard::TicTacToeBoard(vector<Peg> p) 
+TicTacToeBoard::TicTacToeBoard(vector<Peg> p):
+	pegs(p)
+	
+
 {
 	for (int i = 0; i < p.size(); i++) 
 	{
@@ -11,6 +14,8 @@ TicTacToeBoard::TicTacToeBoard(vector<Peg> p)
 		pegs.push_back(p[i]);
 	}
 }
+
+
 
 const std::vector<Peg> TicTacToeBoard::get_pegs()
 {
@@ -22,10 +27,10 @@ bool TicTacToeBoard::game_over()
 	bool end_game = (check_board_full() || check_column_win() || check_diagonal_win() || check_row_win());
 	if (end_game)
 	{
-		if (check_board_full()) // if no win set winner to C
+		if (check_board_full() && !check_column_win() && !check_row_win() && !check_diagonal_win()) // if no win set winner to C
 		{
 
-			winner = "C";
+			winner = "C"; // the game ends in draw 
 		}
 
 		else if (next_player == "X")
@@ -77,7 +82,7 @@ void TicTacToeBoard::set_next_player()
 
 void TicTacToeBoard::clear_board()
 {
-	for (auto peg : pegs)
+	for (auto& peg : pegs)
 	{
 		peg.val == " ";
 	}
@@ -88,7 +93,7 @@ void TicTacToeBoard::clear_board()
 bool TicTacToeBoard::check_board_full()const
 
 {
-	for (auto& peg : pegs)
+	for (auto peg : pegs)
 	{
 		if (peg.val == " ")
 		{

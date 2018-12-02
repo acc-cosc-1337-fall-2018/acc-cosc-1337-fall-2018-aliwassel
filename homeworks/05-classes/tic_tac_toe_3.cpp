@@ -1,23 +1,36 @@
 #include"tic_tac_toe_3.h"
 
-//TicTacToe3::TicTacToe3(vector<Peg>p):TicTacToeBoard(p)
-//{
-//	TicTacToe3 check_who_won;
-//
-//	bool draw = (pegs[0].val == pegs[3].val && pegs[6].val == pegs[8].val) && (pegs[0].val != " " &&  pegs[8].val != " ");
-//	if ((check_board_full()) && (draw = false)) 
-//	{
-//
-//	}
-//
-//	
-//		
-//		
-//	
-//
-//		
-//
-//}
+TicTacToe3::TicTacToe3(vector<Peg>p):TicTacToeBoard(p)
+{
+	int x{ 0 }, o{ 0 }; 
+	for (auto p : pegs) 
+	{
+
+		if (p.val == "X") // for each time pegs is has value of x 
+		{
+			x++;
+		}
+		else if (p.val == "O")
+		{
+			o++;
+		}
+		winner = "O";
+		if (x > o) 
+		{
+			winner = "X";
+		}
+		// check for no wins
+		if (check_board_full() && !check_column_win() &&
+			!check_diagonal_win() && !check_row_win()) 
+		{
+			winner = "C";
+		}
+
+
+	}
+	
+
+}
 
 	
 

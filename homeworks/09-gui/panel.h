@@ -24,11 +24,11 @@ private:
 	wxButton* start_button;
 	wxGridSizer* tic_tac_toe_grid_3;
 	wxGridSizer* tic_tac_toe_grid_4;
-	wxListBox* history_list_box;
+	wxListBox * history_list_box;
 	wxTextCtrl* winner_text;
 	wxTextCtrl* x_winner_label;
-	wxTextCtrl * o_winner_label;
-	wxTextCtrl * c_winner_label;
+	wxTextCtrl* o_winner_label;
+	wxTextCtrl* c_winner_label;
 
 
 	std::unique_ptr<TicTacToeManager> manager;

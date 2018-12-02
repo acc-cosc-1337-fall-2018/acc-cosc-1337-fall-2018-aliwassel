@@ -17,4 +17,3 @@ if(wxWidgets_FOUND)
 
 	add_executable(gui_tic_tac_toe_exe WIN32 ${SOURCE_FILES})
 	target_link_libraries(gui_tic_tac_toe_exe ${wxWidgets_LIBRARIES} tic_tac_toe_library)
-endif()
