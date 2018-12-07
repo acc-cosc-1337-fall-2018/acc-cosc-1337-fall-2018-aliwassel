@@ -46,7 +46,7 @@ void ClockGraphic::draw_hand(double degrees, int length)
 void ClockGraphic::draw_hours_hand()
 {
 	
-	double hours_angle = 3 / 12.0*360.0;
+	double hours_angle = clock.get_hours() / 12.0*360.0;
 	device_context->SetPen(wxPen(wxColor(255, 0, 0), 3));
 	draw_hand(hours_angle, 45);
 
@@ -56,16 +56,16 @@ void ClockGraphic::draw_hours_hand()
 void ClockGraphic::draw_minutes_hand()
 {
 
-	double minutes_angle = 30 / 60.0 * 360.0;
+	double minutes_angle = clock.get_minutes()/60.0*360;
 
-	device_context->SetPen(wxPen(wxColor(0, 0, 255), 2));
+	device_context->SetPen(wxPen(wxColor(0, 0, 255), 3));
 	draw_hand(minutes_angle, 90);
 
 }
 
 void ClockGraphic::draw_seconds_hand()
 {
-	double seconds_angle = 45 / 60.0 * 360;
+	double seconds_angle = clock.get_seconds() / 60.0*360.0;
 	device_context->SetPen(wxPen(wxColor(0, 255, 0), 1));
 
 	draw_hand(seconds_angle, 105);
@@ -79,6 +79,10 @@ void ClockGraphic::draw_hours_text()
 		double hours_angle = i / 12.0 * 360.0;
 		double angle = get_angle(hours_angle);
 		double length = 90;
+		if (i < 3 || i> 8) 
+		{
+			length = 100;
+		}
 		int x = cos(angle) * length + width / 2;
 		int y = sin(angle) * length + width / 2;
 

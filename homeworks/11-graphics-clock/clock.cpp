@@ -33,8 +33,14 @@ Write code to return 12hour formatted time
 */
 std::string Clock::get_time() const
 {
+	auto hours = get_hours();
+	auto minutes = get_minutes();
+	auto seconds = get_seconds();
 
-	return get_hours(),  ":";  get_minutes(), ":" , get_seconds();
+	
+	string show_digital_time = (to_string(hours) + " : " + to_string(minutes) + ":" + to_string(seconds));
+	
+	return show_digital_time;
 }
 
 void Clock::update_time()
